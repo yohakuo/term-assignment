@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/lambda函数/.idea/lambda函数.iml" filepath="$PROJECT_DIR$/lambda函数/.idea/lambda函数.iml" />
+      <module fileurl="file://$PROJECT_DIR$/search/.idea/search.iml" filepath="$PROJECT_DIR$/search/.idea/search.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/例题1.6.iml" filepath="$PROJECT_DIR$/.idea/例题1.6.iml" />
+      <module fileurl="file://$PROJECT_DIR$/其他/.idea/其他.iml" filepath="$PROJECT_DIR$/其他/.idea/其他.iml" />
+      <module fileurl="file://$PROJECT_DIR$/函数/.idea/函数.iml" filepath="$PROJECT_DIR$/函数/.idea/函数.iml" />
+      <module fileurl="file://$PROJECT_DIR$/变量/.idea/变量.iml" filepath="$PROJECT_DIR$/变量/.idea/变量.iml" />
+      <module fileurl="file://$PROJECT_DIR$/数据类型/.idea/数据类型.iml" filepath="$PROJECT_DIR$/数据类型/.idea/数据类型.iml" />
+      <module fileurl="file://$PROJECT_DIR$/标准库模组/.idea/标准库模组.iml" filepath="$PROJECT_DIR$/标准库模组/.idea/标准库模组.iml" />
+      <module fileurl="file://$PROJECT_DIR$/程序设计结构/.idea/程序设计结构.iml" filepath="$PROJECT_DIR$/程序设计结构/.idea/程序设计结构.iml" />
+      <module fileurl="file://$PROJECT_DIR$/第三方库/.idea/第三方库.iml" filepath="$PROJECT_DIR$/第三方库/.idea/第三方库.iml" />
+      <module fileurl="file://$PROJECT_DIR$/输入输出/.idea/输入输出.iml" filepath="$PROJECT_DIR$/输入输出/.idea/输入输出.iml" />
+    </modules>
+  </component>
+</project>

@@ -1,0 +1,8 @@
+tuple1 = ()
+tuple2 = (1, 8, 27, 64, 125)
+tuple3 = ("计算机科学", "生物信息", "电子工程")
+tuple4 = ("华为", 701, "中兴", 606)
+print(tuple1)
+print(tuple2)
+print(tuple3)
+print(tuple4)

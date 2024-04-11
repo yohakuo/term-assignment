@@ -1,0 +1,6 @@
+pellTuple = (0, 1, 2, 5, 12, 29, 70, 169, 408, 985)
+print("元组中元素最大值：", max(pellTuple))
+print("元组中元素最小值：", min(pellTuple))
+print("元组中所有元素的和：", sum(pellTuple))
+print("元素%d在元组中出现次数：%d." % (5, pellTuple.count(5)))
+print("元组中的元素个数：%d." % (len(pellTuple)))
