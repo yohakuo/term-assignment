@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Module name="seg_scan_demo" Lut="1">
+    <SubModule name="seg_ctrl_i">
+        <SubModule name="freq_div_i" Register="14" Lut="28"/>
+        <SubModule name="shift_reg_i" Register="6" Lut="1"/>
+        <SubModule name="seg_decode_i" Lut="5"/>
+    </SubModule>
+</Module>

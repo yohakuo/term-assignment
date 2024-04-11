@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Module name="shizhong_demo" Register="10" Lut="15">
+    <SubModule name="freq_div_i1" Register="15" Lut="29"/>
+    <SubModule name="i40" Lut="1">
+        <SubModule name="freq_div_i" Register="19" Lut="42"/>
+        <SubModule name="shift_reg_i" Register="3"/>
+    </SubModule>
+</Module>

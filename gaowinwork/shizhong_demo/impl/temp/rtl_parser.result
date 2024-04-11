@@ -1,0 +1,156 @@
+[
+ {
+  "InstFile" : "D:/project/gaowinwork/shizhong_demo/src/shizhong_demo.v",
+  "InstLine" : 1,
+  "InstName" : "shizhong_demo",
+  "ModuleFile" : "D:/project/gaowinwork/shizhong_demo/src/shizhong_demo.v",
+  "ModuleLine" : 1,
+  "ModuleName" : "shizhong_demo",
+  "SubInsts" : [
+   {
+    "InstFile" : "D:/project/gaowinwork/shizhong_demo/src/shizhong_demo.v",
+    "InstLine" : 50,
+    "InstName" : "freq_div_i0",
+    "ModuleFile" : "D:/project/gaowinwork/shizhong_demo/src/freq_div.v",
+    "ModuleLine" : 1,
+    "ModuleName" : "freq_div"
+   },
+   {
+    "InstFile" : "D:/project/gaowinwork/shizhong_demo/src/shizhong_demo.v",
+    "InstLine" : 59,
+    "InstName" : "freq_div_i1",
+    "ModuleFile" : "D:/project/gaowinwork/shizhong_demo/src/freq_div.v",
+    "ModuleLine" : 1,
+    "ModuleName" : "freq_div"
+   },
+   {
+    "InstFile" : "D:/project/gaowinwork/shizhong_demo/src/shizhong_demo.v",
+    "InstLine" : 66,
+    "InstName" : "i23",
+    "ModuleFile" : "D:/project/gaowinwork/shizhong_demo/src/key_db.v",
+    "ModuleLine" : 2,
+    "ModuleName" : "key_db",
+    "SubInsts" : [
+     {
+      "InstFile" : "D:/project/gaowinwork/shizhong_demo/src/key_db.v",
+      "InstLine" : 21,
+      "InstName" : "freq_div_i",
+      "ModuleFile" : "D:/project/gaowinwork/shizhong_demo/src/freq_div.v",
+      "ModuleLine" : 1,
+      "ModuleName" : "freq_div"
+     },
+     {
+      "InstFile" : "D:/project/gaowinwork/shizhong_demo/src/key_db.v",
+      "InstLine" : 32,
+      "InstName" : "shift_reg_i",
+      "ModuleFile" : "D:/project/gaowinwork/shizhong_demo/src/shift_reg.v",
+      "ModuleLine" : 3,
+      "ModuleName" : "shift_reg"
+     }
+    ]
+   },
+   {
+    "InstFile" : "D:/project/gaowinwork/shizhong_demo/src/shizhong_demo.v",
+    "InstLine" : 85,
+    "InstName" : "counter_i0",
+    "ModuleFile" : "D:/project/gaowinwork/shizhong_demo/src/counter.v",
+    "ModuleLine" : 2,
+    "ModuleName" : "counter"
+   },
+   {
+    "InstFile" : "D:/project/gaowinwork/shizhong_demo/src/shizhong_demo.v",
+    "InstLine" : 97,
+    "InstName" : "counter_i1",
+    "ModuleFile" : "D:/project/gaowinwork/shizhong_demo/src/counter.v",
+    "ModuleLine" : 2,
+    "ModuleName" : "counter"
+   },
+   {
+    "InstFile" : "D:/project/gaowinwork/shizhong_demo/src/shizhong_demo.v",
+    "InstLine" : 110,
+    "InstName" : "counter_i2",
+    "ModuleFile" : "D:/project/gaowinwork/shizhong_demo/src/counter.v",
+    "ModuleLine" : 2,
+    "ModuleName" : "counter"
+   },
+   {
+    "InstFile" : "D:/project/gaowinwork/shizhong_demo/src/shizhong_demo.v",
+    "InstLine" : 119,
+    "InstName" : "i40",
+    "ModuleFile" : "D:/project/gaowinwork/shizhong_demo/src/key_db.v",
+    "ModuleLine" : 2,
+    "ModuleName" : "key_db",
+    "SubInsts" : [
+     {
+      "InstFile" : "D:/project/gaowinwork/shizhong_demo/src/key_db.v",
+      "InstLine" : 21,
+      "InstName" : "freq_div_i",
+      "ModuleFile" : "D:/project/gaowinwork/shizhong_demo/src/freq_div.v",
+      "ModuleLine" : 1,
+      "ModuleName" : "freq_div"
+     },
+     {
+      "InstFile" : "D:/project/gaowinwork/shizhong_demo/src/key_db.v",
+      "InstLine" : 32,
+      "InstName" : "shift_reg_i",
+      "ModuleFile" : "D:/project/gaowinwork/shizhong_demo/src/shift_reg.v",
+      "ModuleLine" : 3,
+      "ModuleName" : "shift_reg"
+     }
+    ]
+   },
+   {
+    "InstFile" : "D:/project/gaowinwork/shizhong_demo/src/shizhong_demo.v",
+    "InstLine" : 120,
+    "InstName" : "i41",
+    "ModuleFile" : "D:/project/gaowinwork/shizhong_demo/src/key_db.v",
+    "ModuleLine" : 2,
+    "ModuleName" : "key_db",
+    "SubInsts" : [
+     {
+      "InstFile" : "D:/project/gaowinwork/shizhong_demo/src/key_db.v",
+      "InstLine" : 21,
+      "InstName" : "freq_div_i",
+      "ModuleFile" : "D:/project/gaowinwork/shizhong_demo/src/freq_div.v",
+      "ModuleLine" : 1,
+      "ModuleName" : "freq_div"
+     },
+     {
+      "InstFile" : "D:/project/gaowinwork/shizhong_demo/src/key_db.v",
+      "InstLine" : 32,
+      "InstName" : "shift_reg_i",
+      "ModuleFile" : "D:/project/gaowinwork/shizhong_demo/src/shift_reg.v",
+      "ModuleLine" : 3,
+      "ModuleName" : "shift_reg"
+     }
+    ]
+   },
+   {
+    "InstFile" : "D:/project/gaowinwork/shizhong_demo/src/shizhong_demo.v",
+    "InstLine" : 121,
+    "InstName" : "i42",
+    "ModuleFile" : "D:/project/gaowinwork/shizhong_demo/src/key_db.v",
+    "ModuleLine" : 2,
+    "ModuleName" : "key_db",
+    "SubInsts" : [
+     {
+      "InstFile" : "D:/project/gaowinwork/shizhong_demo/src/key_db.v",
+      "InstLine" : 21,
+      "InstName" : "freq_div_i",
+      "ModuleFile" : "D:/project/gaowinwork/shizhong_demo/src/freq_div.v",
+      "ModuleLine" : 1,
+      "ModuleName" : "freq_div"
+     },
+     {
+      "InstFile" : "D:/project/gaowinwork/shizhong_demo/src/key_db.v",
+      "InstLine" : 32,
+      "InstName" : "shift_reg_i",
+      "ModuleFile" : "D:/project/gaowinwork/shizhong_demo/src/shift_reg.v",
+      "ModuleLine" : 3,
+      "ModuleName" : "shift_reg"
+     }
+    ]
+   }
+  ]
+ }
+]

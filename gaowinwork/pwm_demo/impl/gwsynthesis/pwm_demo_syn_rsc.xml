@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Module name="pwm_demo" Lut="1">
+    <SubModule name="key_db_i" Lut="1">
+        <SubModule name="freq_div_i" Register="19" Lut="40"/>
+        <SubModule name="shift_reg_i" Register="3"/>
+    </SubModule>
+    <SubModule name="counter_i" Register="4" Lut="4"/>
+    <SubModule name="pwm_ctrl_i" Alu="4">
+        <SubModule name="counter_i" Register="16" Lut="22"/>
+    </SubModule>
+</Module>

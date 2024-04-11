@@ -1,0 +1,104 @@
+GowinSynthesis start
+Running parser ...
+Analyzing Verilog file 'D:\project\gaowinwork\freq_meter_demo\src\counter.v'
+Analyzing Verilog file 'D:\project\gaowinwork\freq_meter_demo\src\dec_counter.v'
+Analyzing Verilog file 'D:\project\gaowinwork\freq_meter_demo\src\freq_div.v'
+Analyzing Verilog file 'D:\project\gaowinwork\freq_meter_demo\src\freq_meter_demo.v'
+Analyzing Verilog file 'D:\project\gaowinwork\freq_meter_demo\src\mux_4x4.v'
+Analyzing Verilog file 'D:\project\gaowinwork\freq_meter_demo\src\seg_ctrl.v'
+Analyzing Verilog file 'D:\project\gaowinwork\freq_meter_demo\src\seg_decode.v'
+Analyzing Verilog file 'D:\project\gaowinwork\freq_meter_demo\src\shift_reg.v'
+Analyzing Verilog file 'D:\project\gaowinwork\freq_meter_demo\src\state_ctrl.v'
+Compiling module 'freq_meter_demo'("D:\project\gaowinwork\freq_meter_demo\src\freq_meter_demo.v":3)
+Compiling module 'freq_div(DIV_RATE_2N=2)'("D:\project\gaowinwork\freq_meter_demo\src\freq_div.v":3)
+WARN  (EX2629) : Delay control is not supported for synthesis("D:\project\gaowinwork\freq_meter_demo\src\freq_div.v":17)
+WARN  (EX2629) : Delay control is not supported for synthesis("D:\project\gaowinwork\freq_meter_demo\src\freq_div.v":18)
+WARN  (EX2629) : Delay control is not supported for synthesis("D:\project\gaowinwork\freq_meter_demo\src\freq_div.v":23)
+WARN  (EX2629) : Delay control is not supported for synthesis("D:\project\gaowinwork\freq_meter_demo\src\freq_div.v":24)
+Compiling module 'freq_div(DIV_RATE_2N=4)'("D:\project\gaowinwork\freq_meter_demo\src\freq_div.v":3)
+WARN  (EX2629) : Delay control is not supported for synthesis("D:\project\gaowinwork\freq_meter_demo\src\freq_div.v":17)
+WARN  (EX2629) : Delay control is not supported for synthesis("D:\project\gaowinwork\freq_meter_demo\src\freq_div.v":18)
+WARN  (EX3791) : Expression size 3 truncated to fit in target size 2("D:\project\gaowinwork\freq_meter_demo\src\freq_div.v":21)
+WARN  (EX2629) : Delay control is not supported for synthesis("D:\project\gaowinwork\freq_meter_demo\src\freq_div.v":21)
+WARN  (EX2629) : Delay control is not supported for synthesis("D:\project\gaowinwork\freq_meter_demo\src\freq_div.v":23)
+WARN  (EX2629) : Delay control is not supported for synthesis("D:\project\gaowinwork\freq_meter_demo\src\freq_div.v":24)
+Compiling module 'freq_div(DIV_RATE_2N=6)'("D:\project\gaowinwork\freq_meter_demo\src\freq_div.v":3)
+WARN  (EX2629) : Delay control is not supported for synthesis("D:\project\gaowinwork\freq_meter_demo\src\freq_div.v":17)
+WARN  (EX2629) : Delay control is not supported for synthesis("D:\project\gaowinwork\freq_meter_demo\src\freq_div.v":18)
+WARN  (EX3791) : Expression size 4 truncated to fit in target size 3("D:\project\gaowinwork\freq_meter_demo\src\freq_div.v":21)
+WARN  (EX2629) : Delay control is not supported for synthesis("D:\project\gaowinwork\freq_meter_demo\src\freq_div.v":21)
+WARN  (EX2629) : Delay control is not supported for synthesis("D:\project\gaowinwork\freq_meter_demo\src\freq_div.v":23)
+WARN  (EX2629) : Delay control is not supported for synthesis("D:\project\gaowinwork\freq_meter_demo\src\freq_div.v":24)
+Compiling module 'freq_div(DIV_RATE_2N=8)'("D:\project\gaowinwork\freq_meter_demo\src\freq_div.v":3)
+WARN  (EX2629) : Delay control is not supported for synthesis("D:\project\gaowinwork\freq_meter_demo\src\freq_div.v":17)
+WARN  (EX2629) : Delay control is not supported for synthesis("D:\project\gaowinwork\freq_meter_demo\src\freq_div.v":18)
+WARN  (EX3791) : Expression size 4 truncated to fit in target size 3("D:\project\gaowinwork\freq_meter_demo\src\freq_div.v":21)
+WARN  (EX2629) : Delay control is not supported for synthesis("D:\project\gaowinwork\freq_meter_demo\src\freq_div.v":21)
+WARN  (EX2629) : Delay control is not supported for synthesis("D:\project\gaowinwork\freq_meter_demo\src\freq_div.v":23)
+WARN  (EX2629) : Delay control is not supported for synthesis("D:\project\gaowinwork\freq_meter_demo\src\freq_div.v":24)
+Compiling module 'state_ctrl'("D:\project\gaowinwork\freq_meter_demo\src\state_ctrl.v":2)
+WARN  (EX2629) : Delay control is not supported for synthesis("D:\project\gaowinwork\freq_meter_demo\src\state_ctrl.v":24)
+WARN  (EX2629) : Delay control is not supported for synthesis("D:\project\gaowinwork\freq_meter_demo\src\state_ctrl.v":26)
+WARN  (EX2629) : Delay control is not supported for synthesis("D:\project\gaowinwork\freq_meter_demo\src\state_ctrl.v":42)
+WARN  (EX2629) : Delay control is not supported for synthesis("D:\project\gaowinwork\freq_meter_demo\src\state_ctrl.v":43)
+WARN  (EX2629) : Delay control is not supported for synthesis("D:\project\gaowinwork\freq_meter_demo\src\state_ctrl.v":44)
+WARN  (EX2629) : Delay control is not supported for synthesis("D:\project\gaowinwork\freq_meter_demo\src\state_ctrl.v":46)
+WARN  (EX2629) : Delay control is not supported for synthesis("D:\project\gaowinwork\freq_meter_demo\src\state_ctrl.v":47)
+WARN  (EX2629) : Delay control is not supported for synthesis("D:\project\gaowinwork\freq_meter_demo\src\state_ctrl.v":48)
+WARN  (EX2629) : Delay control is not supported for synthesis("D:\project\gaowinwork\freq_meter_demo\src\state_ctrl.v":50)
+WARN  (EX2629) : Delay control is not supported for synthesis("D:\project\gaowinwork\freq_meter_demo\src\state_ctrl.v":51)
+WARN  (EX2629) : Delay control is not supported for synthesis("D:\project\gaowinwork\freq_meter_demo\src\state_ctrl.v":52)
+Compiling module 'counter(WIDTH=25,DATA_MAX=26999999)'("D:\project\gaowinwork\freq_meter_demo\src\counter.v":2)
+WARN  (EX2629) : Delay control is not supported for synthesis("D:\project\gaowinwork\freq_meter_demo\src\counter.v":18)
+WARN  (EX2629) : Delay control is not supported for synthesis("D:\project\gaowinwork\freq_meter_demo\src\counter.v":19)
+WARN  (EX2629) : Delay control is not supported for synthesis("D:\project\gaowinwork\freq_meter_demo\src\counter.v":22)
+WARN  (EX3791) : Expression size 26 truncated to fit in target size 25("D:\project\gaowinwork\freq_meter_demo\src\counter.v":23)
+WARN  (EX2629) : Delay control is not supported for synthesis("D:\project\gaowinwork\freq_meter_demo\src\counter.v":23)
+WARN  (EX2629) : Delay control is not supported for synthesis("D:\project\gaowinwork\freq_meter_demo\src\counter.v":25)
+WARN  (EX2629) : Delay control is not supported for synthesis("D:\project\gaowinwork\freq_meter_demo\src\counter.v":26)
+WARN  (EX3771) : Module instantiation should have an instance name("D:\project\gaowinwork\freq_meter_demo\src\freq_meter_demo.v":57)
+Compiling module 'dec_counter'("D:\project\gaowinwork\freq_meter_demo\src\dec_counter.v":2)
+Compiling module 'counter(DATA_MAX=9)'("D:\project\gaowinwork\freq_meter_demo\src\counter.v":2)
+WARN  (EX2629) : Delay control is not supported for synthesis("D:\project\gaowinwork\freq_meter_demo\src\counter.v":18)
+WARN  (EX2629) : Delay control is not supported for synthesis("D:\project\gaowinwork\freq_meter_demo\src\counter.v":19)
+WARN  (EX2629) : Delay control is not supported for synthesis("D:\project\gaowinwork\freq_meter_demo\src\counter.v":22)
+WARN  (EX3791) : Expression size 5 truncated to fit in target size 4("D:\project\gaowinwork\freq_meter_demo\src\counter.v":23)
+WARN  (EX2629) : Delay control is not supported for synthesis("D:\project\gaowinwork\freq_meter_demo\src\counter.v":23)
+WARN  (EX2629) : Delay control is not supported for synthesis("D:\project\gaowinwork\freq_meter_demo\src\counter.v":25)
+WARN  (EX2629) : Delay control is not supported for synthesis("D:\project\gaowinwork\freq_meter_demo\src\counter.v":26)
+Compiling module 'seg_ctrl'("D:\project\gaowinwork\freq_meter_demo\src\seg_ctrl.v":2)
+Compiling module 'freq_div(DIV_RATE_2N=10000)'("D:\project\gaowinwork\freq_meter_demo\src\freq_div.v":3)
+WARN  (EX2629) : Delay control is not supported for synthesis("D:\project\gaowinwork\freq_meter_demo\src\freq_div.v":17)
+WARN  (EX2629) : Delay control is not supported for synthesis("D:\project\gaowinwork\freq_meter_demo\src\freq_div.v":18)
+WARN  (EX3791) : Expression size 15 truncated to fit in target size 14("D:\project\gaowinwork\freq_meter_demo\src\freq_div.v":21)
+WARN  (EX2629) : Delay control is not supported for synthesis("D:\project\gaowinwork\freq_meter_demo\src\freq_div.v":21)
+WARN  (EX2629) : Delay control is not supported for synthesis("D:\project\gaowinwork\freq_meter_demo\src\freq_div.v":23)
+WARN  (EX2629) : Delay control is not supported for synthesis("D:\project\gaowinwork\freq_meter_demo\src\freq_div.v":24)
+Compiling module 'shift_reg(WIDTH=4,INIT_VALUE=4'h1)'("D:\project\gaowinwork\freq_meter_demo\src\shift_reg.v":3)
+WARN  (EX2629) : Delay control is not supported for synthesis("D:\project\gaowinwork\freq_meter_demo\src\shift_reg.v":19)
+WARN  (EX2629) : Delay control is not supported for synthesis("D:\project\gaowinwork\freq_meter_demo\src\shift_reg.v":21)
+WARN  (EX2629) : Delay control is not supported for synthesis("D:\project\gaowinwork\freq_meter_demo\src\shift_reg.v":25)
+Compiling module 'mux_4x4'("D:\project\gaowinwork\freq_meter_demo\src\mux_4x4.v":2)
+Compiling module 'seg_decode'("D:\project\gaowinwork\freq_meter_demo\src\seg_decode.v":1)
+NOTE  (EX0101) : Current top module is "freq_meter_demo"
+[5%] Running netlist conversion ...
+Running device independent optimization ...
+WARN  (DI0003) : Latch inferred for net 'reg_out_o[0]';We do not recommend the use of latches in FPGA designs, as they may lead to timing problems("D:\project\gaowinwork\freq_meter_demo\src\shift_reg.v":26)
+[10%] Optimizing Phase 0 completed
+[15%] Optimizing Phase 1 completed
+[25%] Optimizing Phase 2 completed
+Running inference ...
+[30%] Inferring Phase 0 completed
+[40%] Inferring Phase 1 completed
+[50%] Inferring Phase 2 completed
+[55%] Inferring Phase 3 completed
+Running technical mapping ...
+[60%] Tech-Mapping Phase 0 completed
+[65%] Tech-Mapping Phase 1 completed
+[75%] Tech-Mapping Phase 2 completed
+[80%] Tech-Mapping Phase 3 completed
+[90%] Tech-Mapping Phase 4 completed
+WARN  (NL0002) : The module "mux_4x4" instantiated to "mux_4x4_i" is swept in optimizing("D:\project\gaowinwork\freq_meter_demo\src\seg_ctrl.v":40)
+[95%] Generate netlist file "D:\project\gaowinwork\freq_meter_demo\impl\gwsynthesis\freq_meter_demo.vg" completed
+[100%] Generate report file "D:\project\gaowinwork\freq_meter_demo\impl\gwsynthesis\freq_meter_demo_syn.rpt.html" completed
+GowinSynthesis finish

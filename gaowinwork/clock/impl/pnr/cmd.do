@@ -1,0 +1,13 @@
+-d D:\project\gaowinwork\clock\impl\gwsynthesis\clock.vg
+-p GW1NSR-4C-QFN48P-6
+-pn GW1NSR-LV4CQN48PC6/I5
+-cst D:\project\gaowinwork\clock\src\clock.cst
+-cfg D:\project\gaowinwork\clock\impl\pnr\device.cfg
+-sdc D:\project\gaowinwork\clock\src\watch.sdc
+-bit
+-tr
+-ph
+-timing
+-cst_error
+-correct_hold 1
+-route_maxfan 23

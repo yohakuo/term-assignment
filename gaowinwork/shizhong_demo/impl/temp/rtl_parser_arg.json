@@ -1,0 +1,32 @@
+{
+ "Files" : [
+  {
+   "Path" : "D:/project/gaowinwork/shizhong_demo/src/counter.v",
+   "Type" : "verilog"
+  },
+  {
+   "Path" : "D:/project/gaowinwork/shizhong_demo/src/freq_div.v",
+   "Type" : "verilog"
+  },
+  {
+   "Path" : "D:/project/gaowinwork/shizhong_demo/src/key_db.v",
+   "Type" : "verilog"
+  },
+  {
+   "Path" : "D:/project/gaowinwork/shizhong_demo/src/shift_reg.v",
+   "Type" : "verilog"
+  },
+  {
+   "Path" : "D:/project/gaowinwork/shizhong_demo/src/shizhong_demo.v",
+   "Type" : "verilog"
+  }
+ ],
+ "IncludePath" : [
+
+ ],
+ "LoopLimit" : 2000,
+ "ResultFile" : "D:/project/gaowinwork/shizhong_demo/impl/temp/rtl_parser.result",
+ "Top" : "",
+ "VerilogStd" : "verilog_2001",
+ "VhdlStd" : "vhdl_93"
+}

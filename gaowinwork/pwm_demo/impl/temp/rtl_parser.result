@@ -1,0 +1,64 @@
+[
+ {
+  "InstFile" : "D:/project/gaowinwork/pwm_demo/src/pwm_demo.v",
+  "InstLine" : 3,
+  "InstName" : "pwm_demo",
+  "ModuleFile" : "D:/project/gaowinwork/pwm_demo/src/pwm_demo.v",
+  "ModuleLine" : 3,
+  "ModuleName" : "pwm_demo",
+  "SubInsts" : [
+   {
+    "InstFile" : "D:/project/gaowinwork/pwm_demo/src/pwm_demo.v",
+    "InstLine" : 13,
+    "InstName" : "key_db_i",
+    "ModuleFile" : "D:/project/gaowinwork/pwm_demo/src/key_db.v",
+    "ModuleLine" : 3,
+    "ModuleName" : "key_db",
+    "SubInsts" : [
+     {
+      "InstFile" : "D:/project/gaowinwork/pwm_demo/src/key_db.v",
+      "InstLine" : 17,
+      "InstName" : "freq_div_i",
+      "ModuleFile" : "D:/project/gaowinwork/pwm_demo/src/freq_div.v",
+      "ModuleLine" : 3,
+      "ModuleName" : "freq_div"
+     },
+     {
+      "InstFile" : "D:/project/gaowinwork/pwm_demo/src/key_db.v",
+      "InstLine" : 27,
+      "InstName" : "shift_reg_i",
+      "ModuleFile" : "D:/project/gaowinwork/pwm_demo/src/shift_reg.v",
+      "ModuleLine" : 3,
+      "ModuleName" : "shift_reg"
+     }
+    ]
+   },
+   {
+    "InstFile" : "D:/project/gaowinwork/pwm_demo/src/pwm_demo.v",
+    "InstLine" : 24,
+    "InstName" : "counter_i",
+    "ModuleFile" : "D:/project/gaowinwork/pwm_demo/src/counter.v",
+    "ModuleLine" : 3,
+    "ModuleName" : "counter"
+   },
+   {
+    "InstFile" : "D:/project/gaowinwork/pwm_demo/src/pwm_demo.v",
+    "InstLine" : 32,
+    "InstName" : "pwm_ctrl_i",
+    "ModuleFile" : "D:/project/gaowinwork/pwm_demo/src/pwm_ctrl.v",
+    "ModuleLine" : 3,
+    "ModuleName" : "pwm_ctrl",
+    "SubInsts" : [
+     {
+      "InstFile" : "D:/project/gaowinwork/pwm_demo/src/pwm_ctrl.v",
+      "InstLine" : 15,
+      "InstName" : "counter_i",
+      "ModuleFile" : "D:/project/gaowinwork/pwm_demo/src/counter.v",
+      "ModuleLine" : 3,
+      "ModuleName" : "counter"
+     }
+    ]
+   }
+  ]
+ }
+]

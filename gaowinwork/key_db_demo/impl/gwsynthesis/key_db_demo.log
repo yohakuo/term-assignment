@@ -1,0 +1,49 @@
+GowinSynthesis start
+Running parser ...
+Analyzing Verilog file 'D:\project\gaowinwork\key_db_demo\src\key_db_demo.v'
+Analyzing Verilog file 'D:\project\gaowinwork\key_db_demo\src\key_db.v'
+Analyzing Verilog file 'D:\project\gaowinwork\key_db_demo\src\counter.v'
+Analyzing Verilog file 'D:\project\gaowinwork\key_db_demo\src\freq_div.v'
+Analyzing Verilog file 'D:\project\gaowinwork\key_db_demo\src\shift_reg.v'
+Compiling module 'key_db_demo'("D:\project\gaowinwork\key_db_demo\src\key_db_demo.v":2)
+Compiling module 'key_db'("D:\project\gaowinwork\key_db_demo\src\key_db.v":2)
+Compiling module 'freq_div(DIV_RATE_2N=270000)'("D:\project\gaowinwork\key_db_demo\src\freq_div.v":3)
+WARN  (EX2629) : Delay control is not supported for synthesis("D:\project\gaowinwork\key_db_demo\src\freq_div.v":17)
+WARN  (EX2629) : Delay control is not supported for synthesis("D:\project\gaowinwork\key_db_demo\src\freq_div.v":18)
+WARN  (EX3791) : Expression size 20 truncated to fit in target size 19("D:\project\gaowinwork\key_db_demo\src\freq_div.v":21)
+WARN  (EX2629) : Delay control is not supported for synthesis("D:\project\gaowinwork\key_db_demo\src\freq_div.v":21)
+WARN  (EX2629) : Delay control is not supported for synthesis("D:\project\gaowinwork\key_db_demo\src\freq_div.v":23)
+WARN  (EX2629) : Delay control is not supported for synthesis("D:\project\gaowinwork\key_db_demo\src\freq_div.v":24)
+WARN  (EX2428) : Cannot index into scalar type parameter/localparam 'RST_VALUE'("D:\project\gaowinwork\key_db_demo\src\key_db.v":31)
+Compiling module 'shift_reg(WIDTH=3,INIT_VALUE=3'b000)'("D:\project\gaowinwork\key_db_demo\src\shift_reg.v":3)
+WARN  (EX2629) : Delay control is not supported for synthesis("D:\project\gaowinwork\key_db_demo\src\shift_reg.v":19)
+WARN  (EX2629) : Delay control is not supported for synthesis("D:\project\gaowinwork\key_db_demo\src\shift_reg.v":21)
+WARN  (EX2629) : Delay control is not supported for synthesis("D:\project\gaowinwork\key_db_demo\src\shift_reg.v":25)
+Compiling module 'counter'("D:\project\gaowinwork\key_db_demo\src\counter.v":2)
+WARN  (EX2629) : Delay control is not supported for synthesis("D:\project\gaowinwork\key_db_demo\src\counter.v":18)
+WARN  (EX2629) : Delay control is not supported for synthesis("D:\project\gaowinwork\key_db_demo\src\counter.v":19)
+WARN  (EX2629) : Delay control is not supported for synthesis("D:\project\gaowinwork\key_db_demo\src\counter.v":22)
+WARN  (EX3791) : Expression size 5 truncated to fit in target size 4("D:\project\gaowinwork\key_db_demo\src\counter.v":23)
+WARN  (EX2629) : Delay control is not supported for synthesis("D:\project\gaowinwork\key_db_demo\src\counter.v":23)
+WARN  (EX2629) : Delay control is not supported for synthesis("D:\project\gaowinwork\key_db_demo\src\counter.v":25)
+WARN  (EX2629) : Delay control is not supported for synthesis("D:\project\gaowinwork\key_db_demo\src\counter.v":26)
+NOTE  (EX0101) : Current top module is "key_db_demo"
+[5%] Running netlist conversion ...
+Running device independent optimization ...
+[10%] Optimizing Phase 0 completed
+[15%] Optimizing Phase 1 completed
+[25%] Optimizing Phase 2 completed
+Running inference ...
+[30%] Inferring Phase 0 completed
+[40%] Inferring Phase 1 completed
+[50%] Inferring Phase 2 completed
+[55%] Inferring Phase 3 completed
+Running technical mapping ...
+[60%] Tech-Mapping Phase 0 completed
+[65%] Tech-Mapping Phase 1 completed
+[75%] Tech-Mapping Phase 2 completed
+[80%] Tech-Mapping Phase 3 completed
+[90%] Tech-Mapping Phase 4 completed
+[95%] Generate netlist file "D:\project\gaowinwork\key_db_demo\impl\gwsynthesis\key_db_demo.vg" completed
+[100%] Generate report file "D:\project\gaowinwork\key_db_demo\impl\gwsynthesis\key_db_demo_syn.rpt.html" completed
+GowinSynthesis finish

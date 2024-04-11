@@ -1,0 +1,70 @@
+[
+ {
+  "InstFile" : "D:/project/gaowinwork/clock/src/clock.v",
+  "InstLine" : 2,
+  "InstName" : "clock",
+  "ModuleFile" : "D:/project/gaowinwork/clock/src/clock.v",
+  "ModuleLine" : 2,
+  "ModuleName" : "clock",
+  "SubInsts" : [
+   {
+    "InstFile" : "D:/project/gaowinwork/clock/src/clock.v",
+    "InstLine" : 37,
+    "InstName" : "u_watch_data_gen",
+    "ModuleFile" : "D:/project/gaowinwork/clock/src/watch_data_gen.v",
+    "ModuleLine" : 3,
+    "ModuleName" : "watch_data_gen",
+    "SubInsts" : [
+     {
+      "InstFile" : "D:/project/gaowinwork/clock/src/watch_data_gen.v",
+      "InstLine" : 64,
+      "InstName" : "u_btn_deb",
+      "ModuleFile" : "D:/project/gaowinwork/clock/src/btn_deb.v",
+      "ModuleLine" : 3,
+      "ModuleName" : "btn_deb"
+     }
+    ]
+   },
+   {
+    "InstFile" : "D:/project/gaowinwork/clock/src/clock.v",
+    "InstLine" : 57,
+    "InstName" : "div_clk",
+    "ModuleFile" : "D:/project/gaowinwork/clock/src/div_clk.v",
+    "ModuleLine" : 3,
+    "ModuleName" : "div_clk"
+   },
+   {
+    "InstFile" : "D:/project/gaowinwork/clock/src/clock.v",
+    "InstLine" : 74,
+    "InstName" : "seq_control_0",
+    "ModuleFile" : "D:/project/gaowinwork/clock/src/seq_control.v",
+    "ModuleLine" : 3,
+    "ModuleName" : "seq_control"
+   },
+   {
+    "InstFile" : "D:/project/gaowinwork/clock/src/clock.v",
+    "InstLine" : 88,
+    "InstName" : "seq_control_1",
+    "ModuleFile" : "D:/project/gaowinwork/clock/src/seq_control.v",
+    "ModuleLine" : 3,
+    "ModuleName" : "seq_control"
+   },
+   {
+    "InstFile" : "D:/project/gaowinwork/clock/src/clock.v",
+    "InstLine" : 102,
+    "InstName" : "seq_control_2",
+    "ModuleFile" : "D:/project/gaowinwork/clock/src/seq_control.v",
+    "ModuleLine" : 3,
+    "ModuleName" : "seq_control"
+   },
+   {
+    "InstFile" : "D:/project/gaowinwork/clock/src/clock.v",
+    "InstLine" : 116,
+    "InstName" : "seq_control_3",
+    "ModuleFile" : "D:/project/gaowinwork/clock/src/seq_control.v",
+    "ModuleLine" : 3,
+    "ModuleName" : "seq_control"
+   }
+  ]
+ }
+]

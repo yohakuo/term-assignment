@@ -1,0 +1,9 @@
+GowinSynthesis start
+Running parser ...
+Analyzing Verilog file 'D:\project\gaowinwork\uart_demo\src\uart_demo.v'
+Analyzing Verilog file 'D:\project\gaowinwork\uart_demo\src\uart_rx.v'
+Undeclared symbol 'frame_done', assumed default net type 'wire'("D:\project\gaowinwork\uart_demo\src\uart_rx.v":71)
+Compiling module 'uart_demo'("D:\project\gaowinwork\uart_demo\src\uart_demo.v":2)
+ERROR (EX3937) : Instantiating unknown module 'key_db'("D:\project\gaowinwork\uart_demo\src\uart_demo.v":28)
+Module 'uart_demo' remains a black box due to errors in its contents("D:\project\gaowinwork\uart_demo\src\uart_demo.v":2)
+GowinSynthesis finish

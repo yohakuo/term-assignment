@@ -1,0 +1,12 @@
+-d D:\project\gaowinwork\freq_meter_demo\impl\gwsynthesis\freq_meter_demo.vg
+-p GW1NSR-4C-QFN48P-6
+-pn GW1NSR-LV4CQN48PC6/I5
+-cst D:\project\gaowinwork\freq_meter_demo\src\freq_meter_demo.cst
+-cfg D:\project\gaowinwork\freq_meter_demo\impl\pnr\device.cfg
+-bit
+-tr
+-ph
+-timing
+-cst_error
+-correct_hold 1
+-route_maxfan 23

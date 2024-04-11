@@ -1,0 +1,176 @@
+[
+ {
+  "InstFile" : "D:/project/gaowinwork/freq_meter_demo/src/freq_meter_demo.v",
+  "InstLine" : 3,
+  "InstName" : "freq_meter_demo",
+  "ModuleFile" : "D:/project/gaowinwork/freq_meter_demo/src/freq_meter_demo.v",
+  "ModuleLine" : 3,
+  "ModuleName" : "freq_meter_demo",
+  "SubInsts" : [
+   {
+    "InstFile" : "D:/project/gaowinwork/freq_meter_demo/src/freq_meter_demo.v",
+    "InstLine" : 21,
+    "InstName" : "FREQ_DIV_GEN[0].freq_div_i",
+    "ModuleFile" : "D:/project/gaowinwork/freq_meter_demo/src/freq_div.v",
+    "ModuleLine" : 3,
+    "ModuleName" : "freq_div"
+   },
+   {
+    "InstFile" : "D:/project/gaowinwork/freq_meter_demo/src/freq_meter_demo.v",
+    "InstLine" : 21,
+    "InstName" : "FREQ_DIV_GEN[1].freq_div_i",
+    "ModuleFile" : "D:/project/gaowinwork/freq_meter_demo/src/freq_div.v",
+    "ModuleLine" : 3,
+    "ModuleName" : "freq_div"
+   },
+   {
+    "InstFile" : "D:/project/gaowinwork/freq_meter_demo/src/freq_meter_demo.v",
+    "InstLine" : 21,
+    "InstName" : "FREQ_DIV_GEN[2].freq_div_i",
+    "ModuleFile" : "D:/project/gaowinwork/freq_meter_demo/src/freq_div.v",
+    "ModuleLine" : 3,
+    "ModuleName" : "freq_div"
+   },
+   {
+    "InstFile" : "D:/project/gaowinwork/freq_meter_demo/src/freq_meter_demo.v",
+    "InstLine" : 21,
+    "InstName" : "FREQ_DIV_GEN[3].freq_div_i",
+    "ModuleFile" : "D:/project/gaowinwork/freq_meter_demo/src/freq_div.v",
+    "ModuleLine" : 3,
+    "ModuleName" : "freq_div"
+   },
+   {
+    "InstFile" : "D:/project/gaowinwork/freq_meter_demo/src/freq_meter_demo.v",
+    "InstLine" : 33,
+    "InstName" : "state_ctrl_i",
+    "ModuleFile" : "D:/project/gaowinwork/freq_meter_demo/src/state_ctrl.v",
+    "ModuleLine" : 2,
+    "ModuleName" : "state_ctrl"
+   },
+   {
+    "InstFile" : "D:/project/gaowinwork/freq_meter_demo/src/freq_meter_demo.v",
+    "InstLine" : 46,
+    "InstName" : "counter_i0",
+    "ModuleFile" : "D:/project/gaowinwork/freq_meter_demo/src/counter.v",
+    "ModuleLine" : 2,
+    "ModuleName" : "counter"
+   },
+   {
+    "InstFile" : "D:/project/gaowinwork/freq_meter_demo/src/freq_meter_demo.v",
+    "InstLine" : 57,
+    "InstName" : "i6",
+    "ModuleFile" : "D:/project/gaowinwork/freq_meter_demo/src/dec_counter.v",
+    "ModuleLine" : 2,
+    "ModuleName" : "dec_counter",
+    "SubInsts" : [
+     {
+      "InstFile" : "D:/project/gaowinwork/freq_meter_demo/src/dec_counter.v",
+      "InstLine" : 22,
+      "InstName" : "CNT_GEN[0].counter_i0",
+      "ModuleFile" : "D:/project/gaowinwork/freq_meter_demo/src/counter.v",
+      "ModuleLine" : 2,
+      "ModuleName" : "counter"
+     },
+     {
+      "InstFile" : "D:/project/gaowinwork/freq_meter_demo/src/dec_counter.v",
+      "InstLine" : 22,
+      "InstName" : "CNT_GEN[1].counter_i0",
+      "ModuleFile" : "D:/project/gaowinwork/freq_meter_demo/src/counter.v",
+      "ModuleLine" : 2,
+      "ModuleName" : "counter"
+     },
+     {
+      "InstFile" : "D:/project/gaowinwork/freq_meter_demo/src/dec_counter.v",
+      "InstLine" : 22,
+      "InstName" : "CNT_GEN[2].counter_i0",
+      "ModuleFile" : "D:/project/gaowinwork/freq_meter_demo/src/counter.v",
+      "ModuleLine" : 2,
+      "ModuleName" : "counter"
+     },
+     {
+      "InstFile" : "D:/project/gaowinwork/freq_meter_demo/src/dec_counter.v",
+      "InstLine" : 22,
+      "InstName" : "CNT_GEN[3].counter_i0",
+      "ModuleFile" : "D:/project/gaowinwork/freq_meter_demo/src/counter.v",
+      "ModuleLine" : 2,
+      "ModuleName" : "counter"
+     },
+     {
+      "InstFile" : "D:/project/gaowinwork/freq_meter_demo/src/dec_counter.v",
+      "InstLine" : 22,
+      "InstName" : "CNT_GEN[4].counter_i0",
+      "ModuleFile" : "D:/project/gaowinwork/freq_meter_demo/src/counter.v",
+      "ModuleLine" : 2,
+      "ModuleName" : "counter"
+     },
+     {
+      "InstFile" : "D:/project/gaowinwork/freq_meter_demo/src/dec_counter.v",
+      "InstLine" : 22,
+      "InstName" : "CNT_GEN[5].counter_i0",
+      "ModuleFile" : "D:/project/gaowinwork/freq_meter_demo/src/counter.v",
+      "ModuleLine" : 2,
+      "ModuleName" : "counter"
+     },
+     {
+      "InstFile" : "D:/project/gaowinwork/freq_meter_demo/src/dec_counter.v",
+      "InstLine" : 22,
+      "InstName" : "CNT_GEN[6].counter_i0",
+      "ModuleFile" : "D:/project/gaowinwork/freq_meter_demo/src/counter.v",
+      "ModuleLine" : 2,
+      "ModuleName" : "counter"
+     },
+     {
+      "InstFile" : "D:/project/gaowinwork/freq_meter_demo/src/dec_counter.v",
+      "InstLine" : 22,
+      "InstName" : "CNT_GEN[7].counter_i0",
+      "ModuleFile" : "D:/project/gaowinwork/freq_meter_demo/src/counter.v",
+      "ModuleLine" : 2,
+      "ModuleName" : "counter"
+     }
+    ]
+   },
+   {
+    "InstFile" : "D:/project/gaowinwork/freq_meter_demo/src/freq_meter_demo.v",
+    "InstLine" : 76,
+    "InstName" : "seg_ctrl_i",
+    "ModuleFile" : "D:/project/gaowinwork/freq_meter_demo/src/seg_ctrl.v",
+    "ModuleLine" : 2,
+    "ModuleName" : "seg_ctrl",
+    "SubInsts" : [
+     {
+      "InstFile" : "D:/project/gaowinwork/freq_meter_demo/src/seg_ctrl.v",
+      "InstLine" : 17,
+      "InstName" : "freq_div_i",
+      "ModuleFile" : "D:/project/gaowinwork/freq_meter_demo/src/freq_div.v",
+      "ModuleLine" : 3,
+      "ModuleName" : "freq_div"
+     },
+     {
+      "InstFile" : "D:/project/gaowinwork/freq_meter_demo/src/seg_ctrl.v",
+      "InstLine" : 26,
+      "InstName" : "shift_reg_i",
+      "ModuleFile" : "D:/project/gaowinwork/freq_meter_demo/src/shift_reg.v",
+      "ModuleLine" : 3,
+      "ModuleName" : "shift_reg"
+     },
+     {
+      "InstFile" : "D:/project/gaowinwork/freq_meter_demo/src/seg_ctrl.v",
+      "InstLine" : 36,
+      "InstName" : "mux_4x4_i",
+      "ModuleFile" : "D:/project/gaowinwork/freq_meter_demo/src/mux_4x4.v",
+      "ModuleLine" : 2,
+      "ModuleName" : "mux_4x4"
+     },
+     {
+      "InstFile" : "D:/project/gaowinwork/freq_meter_demo/src/seg_ctrl.v",
+      "InstLine" : 41,
+      "InstName" : "seg_decode_i",
+      "ModuleFile" : "D:/project/gaowinwork/freq_meter_demo/src/seg_decode.v",
+      "ModuleLine" : 1,
+      "ModuleName" : "seg_decode"
+     }
+    ]
+   }
+  ]
+ }
+]

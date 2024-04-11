@@ -1,0 +1,1 @@
+h=figure('MenuBar','figure','color','r','WindowButtonDownFcn','disp(''Left Button Pressed'')')

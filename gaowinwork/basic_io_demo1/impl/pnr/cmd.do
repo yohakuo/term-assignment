@@ -1,0 +1,12 @@
+-d D:\project\gaowinwork\basic_io_demo1\impl\gwsynthesis\basic_io_demo1.vg
+-p GW1NSR-4C-QFN48P-6
+-pn GW1NSR-LV4CQN48PC6/I5
+-cst D:\project\gaowinwork\basic_io_demo1\src\basic_io_demo1.cst
+-cfg D:\project\gaowinwork\basic_io_demo1\impl\pnr\device.cfg
+-bit
+-tr
+-ph
+-timing
+-cst_error
+-correct_hold 1
+-route_maxfan 23

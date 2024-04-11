@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE gowin-synthesis-project>
+<Project>
+    <Version>beta</Version>
+    <Device id="GW1NSR-4C" package="QFN48P" speed="6" partNumber="GW1NSR-LV4CQN48PC6/I5"/>
+    <FileList>
+        <File path="D:\Experiments\GOWIN\Examples\pwm_demo\src\pwm_demo.v" type="verilog"/>
+        <File path="D:\Experiments\GOWIN\Examples\pwm_demo\src\pwm_ctrl.v" type="verilog"/>
+        <File path="D:\Experiments\GOWIN\Examples\pwm_demo\src\freq_div.v" type="verilog"/>
+        <File path="D:\Experiments\GOWIN\Examples\pwm_demo\src\shift_reg.v" type="verilog"/>
+        <File path="D:\Experiments\GOWIN\Examples\pwm_demo\src\counter.v" type="verilog"/>
+        <File path="D:\Experiments\GOWIN\Examples\pwm_demo\src\key_db.v" type="verilog"/>
+    </FileList>
+    <OptionList>
+        <Option type="disable_insert_pad" value="0"/>
+        <Option type="dsp_balance" value="0"/>
+        <Option type="looplimit" value="2000"/>
+        <Option type="output_file" value="D:\Experiments\GOWIN\Examples\pwm_demo\impl\gwsynthesis\pwm_demo.vg"/>
+        <Option type="print_all_synthesis_warning" value="0"/>
+        <Option type="ram_rw_check" value="1"/>
+        <Option type="verilog_language" value="verilog-2001"/>
+        <Option type="vhdl_language" value="vhdl-1993"/>
+    </OptionList>
+</Project>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Module name="freq_meter_demo" Register="16" Lut="2">
+    <SubModule name="FREQ_DIV_GEN[0].freq_div_i" Register="1" Lut="1"/>
+    <SubModule name="FREQ_DIV_GEN[1].freq_div_i" Register="1" Lut="1"/>
+    <SubModule name="FREQ_DIV_GEN[2].freq_div_i" Register="3" Lut="3"/>
+    <SubModule name="FREQ_DIV_GEN[3].freq_div_i" Register="2" Lut="2"/>
+    <SubModule name="state_ctrl_i" Register="5" Lut="5"/>
+    <SubModule name="counter_i0" Register="26" Lut="62"/>
+    <SubModule name="i6">
+        <SubModule name="CNT_GEN[0].counter_i0" Register="5" Lut="5"/>
+        <SubModule name="CNT_GEN[1].counter_i0" Register="5" Lut="5"/>
+        <SubModule name="CNT_GEN[2].counter_i0" Register="5" Lut="5"/>
+        <SubModule name="CNT_GEN[3].counter_i0" Register="5" Lut="5"/>
+        <SubModule name="CNT_GEN[4].counter_i0" Register="5" Lut="5"/>
+        <SubModule name="CNT_GEN[5].counter_i0" Register="5" Lut="5"/>
+        <SubModule name="CNT_GEN[6].counter_i0" Register="5" Lut="5"/>
+        <SubModule name="CNT_GEN[7].counter_i0" Register="4" Lut="4"/>
+    </SubModule>
+    <SubModule name="seg_ctrl_i">
+        <SubModule name="freq_div_i" Register="14" Lut="25"/>
+        <SubModule name="shift_reg_i" Register="6" Lut="1"/>
+        <SubModule name="seg_decode_i" Lut="20"/>
+    </SubModule>
+</Module>

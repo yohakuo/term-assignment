@@ -1,0 +1,13 @@
+%(1)
+P=45+51*rand(100,5);   %生成并存入
+[Y,U]=max(P)
+[P,b]=min(P)
+%(2)
+m=mean(P)
+s=std(P)
+%(3)
+sum(P,2)
+[Y,U]=max(ans)
+[P,b]=min(ans)
+%(4)
+[zcj,xsxh]=sort(ans)

@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Module name="running_led_demo" Lut="9">
+    <SubModule name="freq_div_i" Register="25" Lut="53"/>
+    <SubModule name="shift_reg_i" Register="11" Lut="1"/>
+</Module>

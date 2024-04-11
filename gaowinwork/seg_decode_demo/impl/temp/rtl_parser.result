@@ -1,0 +1,20 @@
+[
+ {
+  "InstFile" : "D:/project/gaowinwork/seg_decode_demo/src/seg_decode_demo.v",
+  "InstLine" : 1,
+  "InstName" : "seg_decode_demo",
+  "ModuleFile" : "D:/project/gaowinwork/seg_decode_demo/src/seg_decode_demo.v",
+  "ModuleLine" : 1,
+  "ModuleName" : "seg_decode_demo",
+  "SubInsts" : [
+   {
+    "InstFile" : "D:/project/gaowinwork/seg_decode_demo/src/seg_decode_demo.v",
+    "InstLine" : 7,
+    "InstName" : "seg_decode_i",
+    "ModuleFile" : "D:/project/gaowinwork/seg_decode_demo/src/seg_decode.v",
+    "ModuleLine" : 1,
+    "ModuleName" : "seg_decode"
+   }
+  ]
+ }
+]

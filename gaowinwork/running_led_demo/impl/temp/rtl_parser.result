@@ -1,0 +1,28 @@
+[
+ {
+  "InstFile" : "D:/project/gaowinwork/running_led_demo/src/running_led_demo.v",
+  "InstLine" : 3,
+  "InstName" : "running_led_demo",
+  "ModuleFile" : "D:/project/gaowinwork/running_led_demo/src/running_led_demo.v",
+  "ModuleLine" : 3,
+  "ModuleName" : "running_led_demo",
+  "SubInsts" : [
+   {
+    "InstFile" : "D:/project/gaowinwork/running_led_demo/src/running_led_demo.v",
+    "InstLine" : 16,
+    "InstName" : "freq_div_i",
+    "ModuleFile" : "D:/project/gaowinwork/running_led_demo/src/freq_div.v",
+    "ModuleLine" : 3,
+    "ModuleName" : "freq_div"
+   },
+   {
+    "InstFile" : "D:/project/gaowinwork/running_led_demo/src/running_led_demo.v",
+    "InstLine" : 25,
+    "InstName" : "shift_reg_i",
+    "ModuleFile" : "D:/project/gaowinwork/running_led_demo/src/shift_reg.v",
+    "ModuleLine" : 3,
+    "ModuleName" : "shift_reg"
+   }
+  ]
+ }
+]

@@ -1,0 +1,29 @@
+Reading netlist file: "D:\Experiments\GOWIN\Examples\pwm_demo\impl\gwsynthesis\pwm_demo.vg"
+Parsing netlist file "D:\Experiments\GOWIN\Examples\pwm_demo\impl\gwsynthesis\pwm_demo.vg" completed
+Processing netlist completed
+Reading constraint file: "D:\Experiments\GOWIN\Examples\pwm_demo\src\pwm_demo.cst"
+Physical Constraint parsed completed
+Running placement......
+[10%] Placement Phase 0 completed
+[20%] Placement Phase 1 completed
+[30%] Placement Phase 2 completed
+[50%] Placement Phase 3 completed
+Running routing......
+[60%] Routing Phase 0 completed
+[70%] Routing Phase 1 completed
+[80%] Routing Phase 2 completed
+[90%] Routing Phase 3 completed
+Running timing analysis......
+[95%] Timing analysis completed
+Placement and routing completed
+Bitstream generation in progress......
+Bitstream generation completed
+Running power analysis......
+[100%] Power analysis completed
+Generate file "D:\Experiments\GOWIN\Examples\pwm_demo\impl\pnr\pwm_demo.power.html" completed
+Generate file "D:\Experiments\GOWIN\Examples\pwm_demo\impl\pnr\pwm_demo.pin.html" completed
+Generate file "D:\Experiments\GOWIN\Examples\pwm_demo\impl\pnr\pwm_demo.rpt.html" completed
+Generate file "D:\Experiments\GOWIN\Examples\pwm_demo\impl\pnr\pwm_demo.rpt.txt" completed
+Generate file "D:\Experiments\GOWIN\Examples\pwm_demo\impl\pnr\pwm_demo.tr.html" completed
+Sat Aug 19 21:01:34 2023
+

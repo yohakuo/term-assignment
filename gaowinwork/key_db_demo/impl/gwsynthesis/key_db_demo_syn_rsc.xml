@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Module name="key_db_demo" Lut="9">
+    <SubModule name="key_db_i" Lut="1">
+        <SubModule name="freq_div_i" Register="19" Lut="42"/>
+        <SubModule name="shift_reg_i" Register="3"/>
+    </SubModule>
+    <SubModule name="counter_i0" Register="4" Lut="3"/>
+    <SubModule name="counter_i1" Register="4" Lut="3"/>
+</Module>

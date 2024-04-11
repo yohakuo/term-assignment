@@ -1,0 +1,44 @@
+//
+//Written by GowinSynthesis
+//Product Version "V1.9.8.11 Education"
+//Fri Sep 08 09:39:14 2023
+
+//Source file index table:
+//file0 "\D:/project/gaowinwork/basic_io_demo1/src/basic_io_demo.v"
+`pragma protect begin_protected
+`pragma protect version="2.2"
+`pragma protect author="default"
+`pragma protect author_info="default"
+`pragma protect encrypt_agent="GOWIN"
+`pragma protect encrypt_agent_info="GOWIN Encrypt Version 2.2"
+
+`pragma protect encoding=(enctype="base64", line_length=76, bytes=256)
+`pragma protect key_keyowner="GOWIN",key_keyname="GWK2022-10",key_method="rsa"
+`pragma protect key_block
+RHy7AG27/K+RsEXNl5njtUFeTfW2YrupLqWinHywUQjT70y3cVneNms5iepcUqiYQDkoXCFXSJg/
+LU8Ns4IPnMAzn/wyfWooJrDgrRyzJQALLwjrVIwNg003jolac4vwor4GyagBZKZF6V3wclFVIr8l
+tvh41AWtnfVT0jNtsyTMs9SuP9QxkO2vMkLuUv0NDI2kiKDFcH/NyUBOyC7aYiR66u7ecfpobGd5
+COoKTeF0+KTD/bhD+VOIFL54eRIbEiJAQRQcbn2oqtf6Hav6B/ZQXEGFiN8L6txDbcrcItS8W08h
+AA6kNMcfOxSZbz2hL/U+1sRwiTFRD2UAUHYVbQ==
+
+`pragma protect encoding=(enctype="base64", line_length=76, bytes=800)
+`pragma protect data_keyowner="default-ip-vendor"
+`pragma protect data_keyname="default-ip-key"
+`pragma protect data_method="aes128-cbc"
+`pragma protect data_block
+tQh1MWY3aBezlb4DZ1I7t62cvsciz/xG/796FjZ7A+j408wxcfa3HMKFxkU1ajZ/oUFK1Vw7xGyc
+HZ3zrKmSojzacYp2ckZQYa4DdJoZvtWiT5b4jBBn1GRWoV0XozSJ9QyLbCfs0IP3FdoxMYK/FPNN
+FflP55VJ1lJ+arAKdEzhq2xhfhYe7+eLjd/S9TNKoNdvTdtT5XWjs48Nk1Zksmqt8QKEQNgOLa3p
+VK4O9RxIVtbWrY+HiR3xutmA1hzadpp6pTcEEP8zTJvSzqGxHJpR1ROOYLBSKartlyavR/Xk/BcZ
+92AprUVne7v4jcARE5mUfQnizEv+i3qyLJ7lMfUCPHpeIDma8xbHXQZIyRPKPqshtGLMy29wDEN4
+fnPYwye3RA+i2pkH8ma3vSvIUZ19Ft0gkPUNc2hmuxudSlKu7S9oP87RvNd3vFKdFbX3op5EROZR
+gS8rUCnBQz8+LRlRiDF9t6cUDixDE0vH3z6TV5cF05PiiCPBZI2ZjdyY7E5L2O2RgvHxHkfUiaus
+f2w8OsK/cnFrEBuUYYMdwNYFCkqTu1n8sUJgXszFzgx6Fq0tWtQ/TkAaAIl8blZaK2sEahgWSl0i
++JW0LNaMN/xpi7LIwqedMp7KaGrY1ip4fXGFD8iehUkGnojuDce1Mm7WyOUiSeH8gW1XIcq95flm
+45r6lxWIzTExXp4DF60zLw0JysS/QaImCl/xjQ/yoMpgMNl9snMLFBggBh+B2m2YN7JR0kOX8gX9
+p4nTBsl/dYVNpeBIXxv3Tjc5LxRI4IJK8uq9/cwG91eaK5RnZnJzQ+lqc/AJPk3dDoBKBVeERtfm
+/+dC28nf+vPzTWG/Km6AO5lVNygaHZgla4IjgD3YMVrbbpQZxoORCXvHfV+qbzknlS75fAvqqMMQ
+4Tn4tsdnxTj2ewFzv90IaL291unTj6fphbwQMu55+an9u3oNvn+zOa059rSE+cj33Hf211IywzW3
+rsQX1qmH7YX77VtT8xlkXKULzy5GqfDKDWvw9fPci7NoG+KpKTaZdbWlrljYgzkfhSk/6DMXDVnl
+xII=
+`pragma protect end_protected

@@ -1,0 +1,14 @@
+x=linspace(-2*pi,2*pi,20);
+y1=x.^2;
+subplot(2,2,1);%分区
+bar(x,y1);
+title('y1=x^2的条形图');%设置标题
+subplot(2,2,2);
+stairs(x,y1);
+title('y1=x^2的阶梯图');
+subplot(2,2,3);
+stem(x,y1);
+title('y1=x^2的杆图');
+subplot(2,2,4);
+fill(x,y1,'r');%如果少了'r'则会出错
+title('y1=x^2的填充图');

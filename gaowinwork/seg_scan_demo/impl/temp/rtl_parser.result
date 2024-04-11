@@ -1,0 +1,54 @@
+[
+ {
+  "InstFile" : "D:/project/gaowinwork/seg_scan_demo/src/seg_scan_demo.v",
+  "InstLine" : 2,
+  "InstName" : "seg_scan_demo",
+  "ModuleFile" : "D:/project/gaowinwork/seg_scan_demo/src/seg_scan_demo.v",
+  "ModuleLine" : 2,
+  "ModuleName" : "seg_scan_demo",
+  "SubInsts" : [
+   {
+    "InstFile" : "D:/project/gaowinwork/seg_scan_demo/src/seg_scan_demo.v",
+    "InstLine" : 11,
+    "InstName" : "seg_ctrl_i",
+    "ModuleFile" : "D:/project/gaowinwork/seg_scan_demo/src/seg_ctrl.v",
+    "ModuleLine" : 2,
+    "ModuleName" : "seg_ctrl",
+    "SubInsts" : [
+     {
+      "InstFile" : "D:/project/gaowinwork/seg_scan_demo/src/seg_ctrl.v",
+      "InstLine" : 17,
+      "InstName" : "freq_div_i",
+      "ModuleFile" : "D:/project/gaowinwork/seg_scan_demo/src/freq_div.v",
+      "ModuleLine" : 3,
+      "ModuleName" : "freq_div"
+     },
+     {
+      "InstFile" : "D:/project/gaowinwork/seg_scan_demo/src/seg_ctrl.v",
+      "InstLine" : 26,
+      "InstName" : "shift_reg_i",
+      "ModuleFile" : "D:/project/gaowinwork/seg_scan_demo/src/shift_reg.v",
+      "ModuleLine" : 3,
+      "ModuleName" : "shift_reg"
+     },
+     {
+      "InstFile" : "D:/project/gaowinwork/seg_scan_demo/src/seg_ctrl.v",
+      "InstLine" : 36,
+      "InstName" : "mux_4x4_i",
+      "ModuleFile" : "D:/project/gaowinwork/seg_scan_demo/src/mux_4x4.v",
+      "ModuleLine" : 2,
+      "ModuleName" : "mux_4x4"
+     },
+     {
+      "InstFile" : "D:/project/gaowinwork/seg_scan_demo/src/seg_ctrl.v",
+      "InstLine" : 41,
+      "InstName" : "seg_decode_i",
+      "ModuleFile" : "D:/project/gaowinwork/seg_scan_demo/src/seg_decode.v",
+      "ModuleLine" : 1,
+      "ModuleName" : "seg_decode"
+     }
+    ]
+   }
+  ]
+ }
+]

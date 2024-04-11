@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Module name="seg_decode_demo">
+    <SubModule name="seg_decode_i" Lut="7"/>
+</Module>

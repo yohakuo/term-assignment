@@ -1,0 +1,13 @@
+x=linspace(-2*pi,2*pi,100);
+y1=x.^2;
+y2=cos(2*x);
+y3=y1.*y2;
+subplot(1,3,1);%分区
+plot(x,y1);
+title('y1=x^2');%设置标题
+subplot(1,3,2);
+plot(x,y2);
+title('y2=cos(2*x)');
+subplot(1,3,3);
+plot(x,y3);
+title('y3=x^2*cos(2*x)');

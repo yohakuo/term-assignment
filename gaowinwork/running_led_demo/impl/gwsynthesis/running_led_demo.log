@@ -1,0 +1,39 @@
+GowinSynthesis start
+Running parser ...
+Analyzing Verilog file 'D:\project\gaowinwork\running_led_demo\src\freq_div.v'
+Analyzing Verilog file 'D:\project\gaowinwork\running_led_demo\src\shift_reg.v'
+Analyzing Verilog file 'D:\project\gaowinwork\running_led_demo\src\running_led_demo.v'
+Undeclared symbol 'rst', assumed default net type 'wire'("D:\project\gaowinwork\running_led_demo\src\running_led_demo.v":12)
+Compiling module 'running_led_demo'("D:\project\gaowinwork\running_led_demo\src\running_led_demo.v":3)
+Compiling module 'freq_div(DIV_RATE_2N=27000000)'("D:\project\gaowinwork\running_led_demo\src\freq_div.v":3)
+WARN  (EX2629) : Delay control is not supported for synthesis("D:\project\gaowinwork\running_led_demo\src\freq_div.v":17)
+WARN  (EX2629) : Delay control is not supported for synthesis("D:\project\gaowinwork\running_led_demo\src\freq_div.v":18)
+WARN  (EX3791) : Expression size 26 truncated to fit in target size 25("D:\project\gaowinwork\running_led_demo\src\freq_div.v":21)
+WARN  (EX2629) : Delay control is not supported for synthesis("D:\project\gaowinwork\running_led_demo\src\freq_div.v":21)
+WARN  (EX2629) : Delay control is not supported for synthesis("D:\project\gaowinwork\running_led_demo\src\freq_div.v":23)
+WARN  (EX2629) : Delay control is not supported for synthesis("D:\project\gaowinwork\running_led_demo\src\freq_div.v":24)
+Compiling module 'shift_reg'("D:\project\gaowinwork\running_led_demo\src\shift_reg.v":3)
+WARN  (EX2629) : Delay control is not supported for synthesis("D:\project\gaowinwork\running_led_demo\src\shift_reg.v":19)
+WARN  (EX2629) : Delay control is not supported for synthesis("D:\project\gaowinwork\running_led_demo\src\shift_reg.v":21)
+WARN  (EX2629) : Delay control is not supported for synthesis("D:\project\gaowinwork\running_led_demo\src\shift_reg.v":25)
+NOTE  (EX0101) : Current top module is "running_led_demo"
+[5%] Running netlist conversion ...
+Running device independent optimization ...
+WARN  (DI0003) : Latch inferred for net 'reg_out_o[0]';We do not recommend the use of latches in FPGA designs, as they may lead to timing problems("D:\project\gaowinwork\running_led_demo\src\shift_reg.v":26)
+[10%] Optimizing Phase 0 completed
+[15%] Optimizing Phase 1 completed
+[25%] Optimizing Phase 2 completed
+Running inference ...
+[30%] Inferring Phase 0 completed
+[40%] Inferring Phase 1 completed
+[50%] Inferring Phase 2 completed
+[55%] Inferring Phase 3 completed
+Running technical mapping ...
+[60%] Tech-Mapping Phase 0 completed
+[65%] Tech-Mapping Phase 1 completed
+[75%] Tech-Mapping Phase 2 completed
+[80%] Tech-Mapping Phase 3 completed
+[90%] Tech-Mapping Phase 4 completed
+[95%] Generate netlist file "D:\project\gaowinwork\running_led_demo\impl\gwsynthesis\running_led_demo.vg" completed
+[100%] Generate report file "D:\project\gaowinwork\running_led_demo\impl\gwsynthesis\running_led_demo_syn.rpt.html" completed
+GowinSynthesis finish

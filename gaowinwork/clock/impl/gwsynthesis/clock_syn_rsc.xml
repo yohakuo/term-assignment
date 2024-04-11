@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Module name="clock" Register="19" Lut="64">
+    <SubModule name="u_watch_data_gen" Register="99" Alu="5" Lut="201">
+        <SubModule name="u_btn_deb" Register="23" Alu="19" Lut="13"/>
+    </SubModule>
+    <SubModule name="div_clk" Register="10" Alu="8" Lut="8"/>
+</Module>

@@ -1,0 +1,119 @@
+GowinSynthesis start
+Running parser ...
+Analyzing Verilog file 'D:\project\gaowinwork\clock\src\btn_deb.v'
+WARN  (EX3801) : Parameter 'CLK_DIV' becomes localparam in 'btn_deb' with formal parameter declaration list("D:\project\gaowinwork\clock\src\btn_deb.v":14)
+Analyzing Verilog file 'D:\project\gaowinwork\clock\src\clock.v'
+Analyzing Verilog file 'D:\project\gaowinwork\clock\src\div_clk.v'
+WARN  (EX3801) : Parameter 'CLK_DIV_10US' becomes localparam in 'div_clk' with formal parameter declaration list("D:\project\gaowinwork\clock\src\div_clk.v":11)
+Analyzing Verilog file 'D:\project\gaowinwork\clock\src\seq_control.v'
+Analyzing Verilog file 'D:\project\gaowinwork\clock\src\watch_data_gen.v'
+Compiling module 'clock'("D:\project\gaowinwork\clock\src\clock.v":2)
+WARN  (EX2629) : Delay control is not supported for synthesis("D:\project\gaowinwork\clock\src\clock.v":22)
+WARN  (EX2629) : Delay control is not supported for synthesis("D:\project\gaowinwork\clock\src\clock.v":24)
+Compiling module 'watch_data_gen(CLK_FRE=26'b10111110101111000010000000)'("D:\project\gaowinwork\clock\src\watch_data_gen.v":3)
+WARN  (EX2629) : Delay control is not supported for synthesis("D:\project\gaowinwork\clock\src\watch_data_gen.v":29)
+WARN  (EX2629) : Delay control is not supported for synthesis("D:\project\gaowinwork\clock\src\watch_data_gen.v":31)
+WARN  (EX2629) : Delay control is not supported for synthesis("D:\project\gaowinwork\clock\src\watch_data_gen.v":39)
+WARN  (EX2629) : Delay control is not supported for synthesis("D:\project\gaowinwork\clock\src\watch_data_gen.v":41)
+WARN  (EX2629) : Delay control is not supported for synthesis("D:\project\gaowinwork\clock\src\watch_data_gen.v":43)
+Compiling module 'btn_deb(BT_WIDTH=4'd3,CLK_FRE=26'b10111110101111000010000000)'("D:\project\gaowinwork\clock\src\btn_deb.v":3)
+WARN  (EX2629) : Delay control is not supported for synthesis("D:\project\gaowinwork\clock\src\btn_deb.v":20)
+WARN  (EX2629) : Delay control is not supported for synthesis("D:\project\gaowinwork\clock\src\btn_deb.v":22)
+WARN  (EX2629) : Delay control is not supported for synthesis("D:\project\gaowinwork\clock\src\btn_deb.v":28)
+WARN  (EX3670) : Actual bit length 4 differs from formal bit length 3 for port 'btn_out'("D:\project\gaowinwork\clock\src\watch_data_gen.v":68)
+WARN  (EX2629) : Delay control is not supported for synthesis("D:\project\gaowinwork\clock\src\watch_data_gen.v":83)
+WARN  (EX2629) : Delay control is not supported for synthesis("D:\project\gaowinwork\clock\src\watch_data_gen.v":91)
+WARN  (EX2629) : Delay control is not supported for synthesis("D:\project\gaowinwork\clock\src\watch_data_gen.v":93)
+WARN  (EX2629) : Delay control is not supported for synthesis("D:\project\gaowinwork\clock\src\watch_data_gen.v":103)
+WARN  (EX2629) : Delay control is not supported for synthesis("D:\project\gaowinwork\clock\src\watch_data_gen.v":105)
+WARN  (EX2629) : Delay control is not supported for synthesis("D:\project\gaowinwork\clock\src\watch_data_gen.v":107)
+WARN  (EX2629) : Delay control is not supported for synthesis("D:\project\gaowinwork\clock\src\watch_data_gen.v":109)
+WARN  (EX2629) : Delay control is not supported for synthesis("D:\project\gaowinwork\clock\src\watch_data_gen.v":111)
+WARN  (EX2629) : Delay control is not supported for synthesis("D:\project\gaowinwork\clock\src\watch_data_gen.v":119)
+WARN  (EX2629) : Delay control is not supported for synthesis("D:\project\gaowinwork\clock\src\watch_data_gen.v":121)
+WARN  (EX2629) : Delay control is not supported for synthesis("D:\project\gaowinwork\clock\src\watch_data_gen.v":123)
+WARN  (EX2629) : Delay control is not supported for synthesis("D:\project\gaowinwork\clock\src\watch_data_gen.v":125)
+WARN  (EX2629) : Delay control is not supported for synthesis("D:\project\gaowinwork\clock\src\watch_data_gen.v":127)
+WARN  (EX2629) : Delay control is not supported for synthesis("D:\project\gaowinwork\clock\src\watch_data_gen.v":134)
+WARN  (EX2629) : Delay control is not supported for synthesis("D:\project\gaowinwork\clock\src\watch_data_gen.v":136)
+WARN  (EX2629) : Delay control is not supported for synthesis("D:\project\gaowinwork\clock\src\watch_data_gen.v":138)
+WARN  (EX2629) : Delay control is not supported for synthesis("D:\project\gaowinwork\clock\src\watch_data_gen.v":140)
+WARN  (EX2629) : Delay control is not supported for synthesis("D:\project\gaowinwork\clock\src\watch_data_gen.v":142)
+WARN  (EX2629) : Delay control is not supported for synthesis("D:\project\gaowinwork\clock\src\watch_data_gen.v":144)
+WARN  (EX2629) : Delay control is not supported for synthesis("D:\project\gaowinwork\clock\src\watch_data_gen.v":146)
+WARN  (EX2629) : Delay control is not supported for synthesis("D:\project\gaowinwork\clock\src\watch_data_gen.v":153)
+WARN  (EX2629) : Delay control is not supported for synthesis("D:\project\gaowinwork\clock\src\watch_data_gen.v":155)
+WARN  (EX2629) : Delay control is not supported for synthesis("D:\project\gaowinwork\clock\src\watch_data_gen.v":157)
+WARN  (EX2629) : Delay control is not supported for synthesis("D:\project\gaowinwork\clock\src\watch_data_gen.v":159)
+WARN  (EX2629) : Delay control is not supported for synthesis("D:\project\gaowinwork\clock\src\watch_data_gen.v":161)
+WARN  (EX2629) : Delay control is not supported for synthesis("D:\project\gaowinwork\clock\src\watch_data_gen.v":173)
+WARN  (EX2629) : Delay control is not supported for synthesis("D:\project\gaowinwork\clock\src\watch_data_gen.v":175)
+WARN  (EX2629) : Delay control is not supported for synthesis("D:\project\gaowinwork\clock\src\watch_data_gen.v":201)
+WARN  (EX2629) : Delay control is not supported for synthesis("D:\project\gaowinwork\clock\src\watch_data_gen.v":207)
+WARN  (EX2629) : Delay control is not supported for synthesis("D:\project\gaowinwork\clock\src\watch_data_gen.v":216)
+WARN  (EX2629) : Delay control is not supported for synthesis("D:\project\gaowinwork\clock\src\watch_data_gen.v":234)
+WARN  (EX2629) : Delay control is not supported for synthesis("D:\project\gaowinwork\clock\src\watch_data_gen.v":236)
+WARN  (EX2629) : Delay control is not supported for synthesis("D:\project\gaowinwork\clock\src\watch_data_gen.v":238)
+WARN  (EX2629) : Delay control is not supported for synthesis("D:\project\gaowinwork\clock\src\watch_data_gen.v":240)
+WARN  (EX2629) : Delay control is not supported for synthesis("D:\project\gaowinwork\clock\src\watch_data_gen.v":247)
+WARN  (EX2629) : Delay control is not supported for synthesis("D:\project\gaowinwork\clock\src\watch_data_gen.v":249)
+WARN  (EX2629) : Delay control is not supported for synthesis("D:\project\gaowinwork\clock\src\watch_data_gen.v":251)
+WARN  (EX2629) : Delay control is not supported for synthesis("D:\project\gaowinwork\clock\src\watch_data_gen.v":253)
+WARN  (EX2629) : Delay control is not supported for synthesis("D:\project\gaowinwork\clock\src\watch_data_gen.v":261)
+WARN  (EX2629) : Delay control is not supported for synthesis("D:\project\gaowinwork\clock\src\watch_data_gen.v":263)
+WARN  (EX2629) : Delay control is not supported for synthesis("D:\project\gaowinwork\clock\src\watch_data_gen.v":265)
+WARN  (EX2629) : Delay control is not supported for synthesis("D:\project\gaowinwork\clock\src\watch_data_gen.v":267)
+WARN  (EX2629) : Delay control is not supported for synthesis("D:\project\gaowinwork\clock\src\watch_data_gen.v":269)
+WARN  (EX2629) : Delay control is not supported for synthesis("D:\project\gaowinwork\clock\src\watch_data_gen.v":275)
+WARN  (EX2629) : Delay control is not supported for synthesis("D:\project\gaowinwork\clock\src\watch_data_gen.v":277)
+WARN  (EX2629) : Delay control is not supported for synthesis("D:\project\gaowinwork\clock\src\watch_data_gen.v":279)
+WARN  (EX2629) : Delay control is not supported for synthesis("D:\project\gaowinwork\clock\src\watch_data_gen.v":281)
+WARN  (EX2629) : Delay control is not supported for synthesis("D:\project\gaowinwork\clock\src\watch_data_gen.v":291)
+WARN  (EX2629) : Delay control is not supported for synthesis("D:\project\gaowinwork\clock\src\watch_data_gen.v":292)
+WARN  (EX2629) : Delay control is not supported for synthesis("D:\project\gaowinwork\clock\src\watch_data_gen.v":293)
+WARN  (EX2629) : Delay control is not supported for synthesis("D:\project\gaowinwork\clock\src\watch_data_gen.v":294)
+WARN  (EX2629) : Delay control is not supported for synthesis("D:\project\gaowinwork\clock\src\watch_data_gen.v":295)
+WARN  (EX2629) : Delay control is not supported for synthesis("D:\project\gaowinwork\clock\src\watch_data_gen.v":299)
+WARN  (EX2629) : Delay control is not supported for synthesis("D:\project\gaowinwork\clock\src\watch_data_gen.v":300)
+WARN  (EX2629) : Delay control is not supported for synthesis("D:\project\gaowinwork\clock\src\watch_data_gen.v":301)
+Compiling module 'div_clk(CLK_FRE=26'b10111110101111000010000000)'("D:\project\gaowinwork\clock\src\div_clk.v":3)
+WARN  (EX2629) : Delay control is not supported for synthesis("D:\project\gaowinwork\clock\src\div_clk.v":16)
+WARN  (EX2629) : Delay control is not supported for synthesis("D:\project\gaowinwork\clock\src\div_clk.v":18)
+WARN  (EX2629) : Delay control is not supported for synthesis("D:\project\gaowinwork\clock\src\div_clk.v":25)
+WARN  (EX2629) : Delay control is not supported for synthesis("D:\project\gaowinwork\clock\src\div_clk.v":27)
+WARN  (EX2629) : Delay control is not supported for synthesis("D:\project\gaowinwork\clock\src\clock.v":71)
+Compiling module 'seq_control'("D:\project\gaowinwork\clock\src\seq_control.v":3)
+WARN  (EX2629) : Delay control is not supported for synthesis("D:\project\gaowinwork\clock\src\seq_control.v":21)
+WARN  (EX2629) : Delay control is not supported for synthesis("D:\project\gaowinwork\clock\src\seq_control.v":23)
+WARN  (EX2629) : Delay control is not supported for synthesis("D:\project\gaowinwork\clock\src\clock.v":138)
+WARN  (EX2629) : Delay control is not supported for synthesis("D:\project\gaowinwork\clock\src\clock.v":140)
+WARN  (EX2629) : Delay control is not supported for synthesis("D:\project\gaowinwork\clock\src\clock.v":142)
+WARN  (EX2629) : Delay control is not supported for synthesis("D:\project\gaowinwork\clock\src\clock.v":144)
+WARN  (EX2629) : Delay control is not supported for synthesis("D:\project\gaowinwork\clock\src\clock.v":151)
+WARN  (EX2629) : Delay control is not supported for synthesis("D:\project\gaowinwork\clock\src\clock.v":153)
+WARN  (EX2629) : Delay control is not supported for synthesis("D:\project\gaowinwork\clock\src\clock.v":155)
+WARN  (EX2629) : Delay control is not supported for synthesis("D:\project\gaowinwork\clock\src\clock.v":157)
+NOTE  (EX0101) : Current top module is "clock"
+[5%] Running netlist conversion ...
+Running device independent optimization ...
+[10%] Optimizing Phase 0 completed
+[15%] Optimizing Phase 1 completed
+[25%] Optimizing Phase 2 completed
+Running inference ...
+[30%] Inferring Phase 0 completed
+[40%] Inferring Phase 1 completed
+[50%] Inferring Phase 2 completed
+[55%] Inferring Phase 3 completed
+Running technical mapping ...
+[60%] Tech-Mapping Phase 0 completed
+[65%] Tech-Mapping Phase 1 completed
+[75%] Tech-Mapping Phase 2 completed
+[80%] Tech-Mapping Phase 3 completed
+[90%] Tech-Mapping Phase 4 completed
+WARN  (NL0002) : The module "seq_control" instantiated to "seq_control_0" is swept in optimizing("D:\project\gaowinwork\clock\src\clock.v":83)
+WARN  (NL0002) : The module "seq_control" instantiated to "seq_control_1" is swept in optimizing("D:\project\gaowinwork\clock\src\clock.v":97)
+WARN  (NL0002) : The module "seq_control" instantiated to "seq_control_2" is swept in optimizing("D:\project\gaowinwork\clock\src\clock.v":111)
+WARN  (NL0002) : The module "seq_control" instantiated to "seq_control_3" is swept in optimizing("D:\project\gaowinwork\clock\src\clock.v":125)
+[95%] Generate netlist file "D:\project\gaowinwork\clock\impl\gwsynthesis\clock.vg" completed
+[100%] Generate report file "D:\project\gaowinwork\clock\impl\gwsynthesis\clock_syn.rpt.html" completed
+GowinSynthesis finish

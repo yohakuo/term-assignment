@@ -1,0 +1,54 @@
+[
+ {
+  "InstFile" : "D:/project/gaowinwork/key_db_demo/src/key_db_demo.v",
+  "InstLine" : 2,
+  "InstName" : "key_db_demo",
+  "ModuleFile" : "D:/project/gaowinwork/key_db_demo/src/key_db_demo.v",
+  "ModuleLine" : 2,
+  "ModuleName" : "key_db_demo",
+  "SubInsts" : [
+   {
+    "InstFile" : "D:/project/gaowinwork/key_db_demo/src/key_db_demo.v",
+    "InstLine" : 12,
+    "InstName" : "key_db_i",
+    "ModuleFile" : "D:/project/gaowinwork/key_db_demo/src/key_db.v",
+    "ModuleLine" : 2,
+    "ModuleName" : "key_db",
+    "SubInsts" : [
+     {
+      "InstFile" : "D:/project/gaowinwork/key_db_demo/src/key_db.v",
+      "InstLine" : 21,
+      "InstName" : "freq_div_i",
+      "ModuleFile" : "D:/project/gaowinwork/key_db_demo/src/freq_div.v",
+      "ModuleLine" : 3,
+      "ModuleName" : "freq_div"
+     },
+     {
+      "InstFile" : "D:/project/gaowinwork/key_db_demo/src/key_db.v",
+      "InstLine" : 32,
+      "InstName" : "shift_reg_i",
+      "ModuleFile" : "D:/project/gaowinwork/key_db_demo/src/shift_reg.v",
+      "ModuleLine" : 3,
+      "ModuleName" : "shift_reg"
+     }
+    ]
+   },
+   {
+    "InstFile" : "D:/project/gaowinwork/key_db_demo/src/key_db_demo.v",
+    "InstLine" : 23,
+    "InstName" : "counter_i0",
+    "ModuleFile" : "D:/project/gaowinwork/key_db_demo/src/counter.v",
+    "ModuleLine" : 2,
+    "ModuleName" : "counter"
+   },
+   {
+    "InstFile" : "D:/project/gaowinwork/key_db_demo/src/key_db_demo.v",
+    "InstLine" : 34,
+    "InstName" : "counter_i1",
+    "ModuleFile" : "D:/project/gaowinwork/key_db_demo/src/counter.v",
+    "ModuleLine" : 2,
+    "ModuleName" : "counter"
+   }
+  ]
+ }
+]
