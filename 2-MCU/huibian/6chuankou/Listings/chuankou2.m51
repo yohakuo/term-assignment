@@ -1,0 +1,84 @@
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                    04/17/2023  13:39:58  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22.2.0, INVOKED BY:
+D:\APP\KEIL_V5\C51\BIN\BL51.EXE .\Objects\chuankou2.obj TO .\Objects\chuankou2 PRINT (.\Listings\chuankou2.m51)
+
+
+INPUT MODULES INCLUDED:
+  .\Objects\chuankou2.obj (CHUANKOU2)
+
+
+LINK MAP OF MODULE:  .\Objects\chuankou2 (CHUANKOU2)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0349H     ABSOLUTE     
+
+
+
+SYMBOL TABLE OF MODULE:  .\Objects\chuankou2 (CHUANKOU2)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        CHUANKOU2
+  C:0321H         SYMBOL        K1
+  C:032BH         SYMBOL        K2
+  C:0335H         SYMBOL        K3
+  C:033FH         SYMBOL        K4
+  C:0316H         SYMBOL        LOOP
+  C:0300H         SYMBOL        MAIN
+  D:0080H         SYMBOL        P0
+  D:0087H         SYMBOL        PCON
+  B:0098H.0       SYMBOL        RI
+  D:0099H         SYMBOL        SBUF
+  D:0098H         SYMBOL        SCON
+  D:0081H         SYMBOL        SP
+  D:008DH         SYMBOL        TH1
+  D:008BH         SYMBOL        TL1
+  D:0089H         SYMBOL        TMOD
+  B:0088H.6       SYMBOL        TR1
+  C:0000H         LINE#         2
+  C:0300H         LINE#         5
+  C:0303H         LINE#         6
+  C:0306H         LINE#         7
+  C:0309H         LINE#         8
+  C:030CH         LINE#         9
+  C:030FH         LINE#         10
+  C:0312H         LINE#         11
+  C:0314H         LINE#         12
+  C:0316H         LINE#         15
+  C:0319H         LINE#         16
+  C:031BH         LINE#         17
+  C:031DH         LINE#         18
+  C:031FH         LINE#         19
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  04/17/2023  13:39:58  PAGE 2
+
+
+  C:0321H         LINE#         22
+  C:0324H         LINE#         23
+  C:0326H         LINE#         24
+  C:0328H         LINE#         25
+  C:032BH         LINE#         27
+  C:032EH         LINE#         28
+  C:0330H         LINE#         29
+  C:0332H         LINE#         30
+  C:0335H         LINE#         32
+  C:0338H         LINE#         33
+  C:033AH         LINE#         34
+  C:033CH         LINE#         35
+  C:033FH         LINE#         37
+  C:0342H         LINE#         38
+  C:0344H         LINE#         39
+  C:0346H         LINE#         40
+  -------         ENDMOD        CHUANKOU2
+
+Program Size: data=8.0 xdata=0 code=841
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)

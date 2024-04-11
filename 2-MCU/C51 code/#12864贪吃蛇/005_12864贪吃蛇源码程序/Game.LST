@@ -1,0 +1,369 @@
+C51 COMPILER V9.01   GAME                                                                  06/18/2020 09:25:41 PAGE 1   
+
+
+C51 COMPILER V9.01, COMPILATION OF MODULE GAME
+OBJECT MODULE PLACED IN Game.OBJ
+COMPILER INVOKED BY: D:\keil4\C51\BIN\C51.EXE Game.c BROWSE DEBUG OBJECTEXTEND
+
+line level    source
+
+   1          /***********************************************************
+   2          功能说明：贪吃蛇
+   3          接线：带字库的12864接到12864接口
+   4                如果使用的是A4以上开发板 则需要另外接线矩阵按键到IO口P1
+   5          
+   6          矩阵按键：S6向上 S14向下
+   7                    S9向左 S11向右
+   8                    
+   9          修改宏定义中的Speed可修改速度
+  10          *****************************************************************/
+  11          #include "stc.h"
+  12          #include "Lcd12864.h"
+  13          #include "Key.h"
+  14          #define uchar unsigned char
+  15          #define uint unsigned int
+  16          
+  17          static unsigned long Seed = 1;
+  18          #define A 48271L
+  19          #define M 2147483647L
+  20          #define Q (M / A)
+  21          #define R (M % A)
+  22          /************************************
+  23          伪随机数发生器
+  24          *************************************/
+  25          double Random(void)
+  26          {
+  27   1              long TmpSeed;
+  28   1              TmpSeed=A*(Seed%Q)-R*(Seed/Q);
+  29   1              if(TmpSeed>=0)
+  30   1                      Seed=TmpSeed;
+  31   1              else
+  32   1                      Seed=TmpSeed+M;
+  33   1              return (double)Seed/M;
+  34   1      }
+  35          
+  36          /**************************************
+  37          为伪随机数发生器播种
+  38          ***************************************/
+  39          void InitRandom(unsigned long InitVal)
+  40          {
+  41   1              Seed=InitVal;
+  42   1      }
+  43          
+  44          //延时子程序
+  45          void delay(unsigned int t)
+  46          {  
+  47   1              unsigned int i,j;
+  48   1              for(i=0;i<t;i++)
+  49   1                      for(j=0;j<10;j++);    
+  50   1      }
+  51          
+  52          /*********************************
+  53          初始化MPU
+  54          **********************************/
+  55          void InitCpu(void)
+C51 COMPILER V9.01   GAME                                                                  06/18/2020 09:25:41 PAGE 2   
+
+  56          {
+  57   1              TMOD=0x01;
+  58   1              TH0=0;
+  59   1              TL0=0;
+  60   1              TR0=1;
+  61   1              ET0=1;
+  62   1              EA=1;
+  63   1      }
+  64          
+  65          #define N 25
+  66          struct Food//食物结构体
+  67          {
+  68                  unsigned char x;
+  69                  unsigned char y;
+  70                  unsigned char yes;
+  71          }food;
+  72          
+  73          struct Snake//蛇结构体
+  74          {
+  75                  unsigned char x[N];
+  76                  unsigned char y[N];
+  77                  unsigned char node;
+  78                  unsigned char direction;
+  79                  unsigned char life;
+  80          }snake;
+  81          
+  82          unsigned char Flag=0;
+  83          unsigned char Score=0;         //分数
+  84          unsigned char Speed=3;             //speed越大，速度越慢
+  85          unsigned char KeyBuffer=0;     //键值
+  86          #define FUNC 1                             //(P3^1)表示级别
+  87          #define UP 2                               //(P3^3)表示左
+  88          #define DOWN 3                             //(P3^5)表示右
+  89          #define LEFT 4                             //(P3^4)表示下
+  90          #define RIGHT 5                            //(P3^2)表示上
+  91          #define PASSSCORE 20               //预定义过关成绩
+  92          
+  93          void Timer0Int(void) interrupt 1 //按键扫描中断
+  94          {
+  95   1              switch(OSReadKey())
+  96   1              {
+  97   2                      case 5:
+  98   2                                      KeyBuffer=FUNC;                                           //表示级别
+  99   2                                      /*if(++Speed>=10)
+ 100   2                                              Speed=1;
+ 101   2                                      Flag|=1<<1;//速度变化标志置1*/
+ 102   2                                      break;
+ 103   2                      case 13:
+ 104   2                                      KeyBuffer=DOWN;                                          //表示右
+ 105   2                                      /*if(snake.direction!=2)
+ 106   2                                              snake.direction=1;*/
+ 107   2                                      break;
+ 108   2                      case 21:
+ 109   2                                      KeyBuffer=UP;                                            //表示左
+ 110   2                                      /*if(snake.direction!=1)
+ 111   2                                              snake.direction=2;*/
+ 112   2                                      break;
+ 113   2                      case 17:
+ 114   2                                      KeyBuffer=RIGHT;                                         //表示上
+ 115   2                                      /*if(snake.direction!=4)
+ 116   2                                              snake.direction=3;*/
+ 117   2                                      break;
+C51 COMPILER V9.01   GAME                                                                  06/18/2020 09:25:41 PAGE 3   
+
+ 118   2                      case 9:
+ 119   2                                      KeyBuffer=LEFT;                                          //表示下
+ 120   2                                      /*if(snake.direction!=3)
+ 121   2                                              snake.direction=4;*/
+ 122   2                                      break;
+ 123   2                      default:
+ 124   2                                      break;
+ 125   2              }
+ 126   1      }
+ 127          
+ 128          /******************************
+ 129          画墙壁，初始化界面
+ 130          *******************************/
+ 131          void DrawBoard(void)
+ 132          {
+ 133   1              unsigned char n;
+ 134   1              for(n=0;n<31;n++)
+ 135   1              {
+ 136   2                      Lcd_Rectangle(3*n,0,3*n+2,2,1);
+ 137   2                      Lcd_Rectangle(3*n,60,3*n+2,62,1);
+ 138   2              }
+ 139   1              for(n=0;n<21;n++)
+ 140   1              {
+ 141   2                      Lcd_Rectangle(0,3*n,2,3*n+2,1);
+ 142   2                      Lcd_Rectangle(90,3*n,92,3*n+2,1);               
+ 143   2              }
+ 144   1              Lcd_HoriLine(93,31,35,1);
+ 145   1              Lcd_HoriLine(93,63,35,1);
+ 146   1      }
+ 147          
+ 148          /***************************
+ 149          打印成绩
+ 150          ****************************/
+ 151          void PrintScore(void)
+ 152          {
+ 153   1              unsigned char Str[3];
+ 154   1              Lcd_WriteStr(6,0,"成绩");
+ 155   1              Str[0]=(Score/10)|0x30;//十位
+ 156   1              Str[1]=(Score%10)|0x30;//个位
+ 157   1              Str[2]=0;
+ 158   1              Lcd_WriteStr(7,1,Str);
+ 159   1      }
+ 160          
+ 161          /********************************
+ 162          打印速度级别
+ 163          *********************************/
+ 164          void PrintSpeed(void)
+ 165          {
+ 166   1              unsigned char Str[2];
+ 167   1              Lcd_WriteStr(6,2,"级别");
+ 168   1              Str[0]=Speed|0x30;
+ 169   1              Str[1]=0;
+ 170   1              Lcd_WriteStr(7,3,Str);
+ 171   1      }
+ 172          
+ 173          /***********************************
+ 174          游戏结束处理
+ 175          ************************************/
+ 176          void GameOver(void)
+ 177          {
+ 178   1              unsigned char n;
+ 179   1              Lcd_Rectangle(food.x,food.y,food.x+2,food.y+2,0);//消隐出食物
+C51 COMPILER V9.01   GAME                                                                  06/18/2020 09:25:41 PAGE 4   
+
+ 180   1              for(n=1;n<snake.node;n++)
+ 181   1              {
+ 182   2                      Lcd_Rectangle(snake.x[n],snake.y[n],snake.x[n]+2,snake.y[n]+2,0);//消隐食物，蛇头已到墙壁内，故不用消去 
+             -        
+ 183   2              }
+ 184   1              if(snake.life==0)//如果蛇还活着
+ 185   1                      Lcd_WriteStr(2,1,"过关");
+ 186   1              else             //如果蛇死了
+ 187   1                      Lcd_WriteStr(2,1,"输了");
+ 188   1              Lcd_WriteStr(1,2,"游戏结束");
+ 189   1      }
+ 190          
+ 191          /********************************
+ 192          游戏的具体过程，也是贪吃蛇算法的关键部分
+ 193          *********************************/
+ 194          void GamePlay(void)
+ 195          {
+ 196   1              unsigned char n;
+ 197   1              InitRandom(TL0);
+ 198   1              food.yes=1;//1表示需要出现新事物，0表示已经存在食物尚未吃掉
+ 199   1              snake.life=0;//表示蛇还活着
+ 200   1              snake.direction=DOWN;
+ 201   1              snake.x[0]=6;snake.y[0]=6;
+ 202   1              snake.x[1]=3;snake.y[1]=6;
+ 203   1              snake.node=2;
+ 204   1              PrintScore();
+ 205   1              PrintSpeed();
+ 206   1              while(1)
+ 207   1              {
+ 208   2                      if(food.yes==1)
+ 209   2                      {
+ 210   3                              while(1)
+ 211   3                              {
+ 212   4                                      food.x=Random()*85+3;
+ 213   4                                      food.y=Random()*55+3;//获得随机数
+ 214   4              
+ 215   4                                      while(food.x%3!=0)
+ 216   4                                              food.x++;
+ 217   4                                      while(food.y%3!=0)
+ 218   4                                              food.y++;
+ 219   4                                  for(n=0;n<snake.node;n++)//判断产生的食物坐标是否和蛇身重合
+ 220   4                                      {
+ 221   5                                              if((food.x==snake.x[n])&&(food.y==snake.y[n]))
+ 222   5                                                      break;
+ 223   5                                      }
+ 224   4                                      if(n==snake.node)
+ 225   4                                      {
+ 226   5                                              food.yes=0;
+ 227   5                                              break;//产生有效的食物坐标
+ 228   5                                      }
+ 229   4                              }
+ 230   3                      }
+ 231   2                      if(food.yes==0)
+ 232   2                      {
+ 233   3                              Lcd_Rectangle(food.x,food.y,food.x+2,food.y+2,1);
+ 234   3                      }       
+ 235   2                      for(n=snake.node-1;n>0;n--)
+ 236   2                      {
+ 237   3                              snake.x[n]=snake.x[n-1];
+ 238   3                              snake.y[n]=snake.y[n-1];
+ 239   3                      }
+ 240   2                      switch(snake.direction)
+C51 COMPILER V9.01   GAME                                                                  06/18/2020 09:25:41 PAGE 5   
+
+ 241   2                      {
+ 242   3                              case DOWN:snake.x[0]+=3;break;
+ 243   3                              case UP:snake.x[0]-=3;break;
+ 244   3                              case RIGHT:snake.y[0]-=3;break;
+ 245   3                              case LEFT:snake.y[0]+=3;break;
+ 246   3                              default:break;
+ 247   3                      }
+ 248   2                      for(n=3;n<snake.node;n++)//从第三节开始判断蛇头是否咬到自己
+ 249   2                      {
+ 250   3                              if(snake.x[n]==snake.x[0]&&snake.y[n]==snake.y[0])
+ 251   3                              {
+ 252   4                                      GameOver();
+ 253   4                                      snake.life=1;
+ 254   4                                      break;
+ 255   4                              }
+ 256   3                      }
+ 257   2                      if(snake.x[0]<3||snake.x[0]>=90||snake.y[0]<3||snake.y[0]>=60)//判蛇头是否撞到墙壁
+ 258   2                      {
+ 259   3                              GameOver();
+ 260   3                              snake.life=1;
+ 261   3                      }
+ 262   2                      if(snake.life==1)
+ 263   2                              break;//蛇死，则跳出while(1)循环
+ 264   2                      if(snake.x[0]==food.x&&snake.y[0]==food.y)//判蛇是否吃到食物
+ 265   2                      {
+ 266   3                              Lcd_Rectangle(food.x,food.y,food.x+2,food.y+2,0);//消隐食物
+ 267   3                              snake.x[snake.node]=200;
+ 268   3                              snake.y[snake.node]=200;//产生蛇新的节坐标先放在看不见的位置
+ 269   3                              snake.node++;//蛇节数加1
+ 270   3                              food.yes=1;//食物标志置1
+ 271   3                              if(++Score>=PASSSCORE)
+ 272   3                              {
+ 273   4                                      PrintScore();
+ 274   4                                      GameOver();
+ 275   4                                      break;
+ 276   4                              }
+ 277   3                              PrintScore();
+ 278   3                      }
+ 279   2                      for(n=0;n<snake.node;n++)
+ 280   2                      {
+ 281   3                              Lcd_Rectangle(snake.x[n],snake.y[n],snake.x[n]+2,snake.y[n]+2,1);
+ 282   3                      }//根据蛇的节数画出蛇
+ 283   2                      delay(Speed*1000);        //调速
+ 284   2                      delay(Speed*1000);
+ 285   2                      Lcd_Rectangle(snake.x[snake.node-1],snake.y[snake.node-1],snake.x[snake.node-1]+2,snake.y[snake.node-1]+
+             -2,0);
+ 286   2                      switch(KeyBuffer)
+ 287   2                      {
+ 288   3                              case FUNC:
+ 289   3                                              KeyBuffer=0;
+ 290   3                                              if(++Speed>=10)
+ 291   3                                                      Speed=1;
+ 292   3                                              PrintSpeed();
+ 293   3                                              break;
+ 294   3                              case DOWN:
+ 295   3                                              KeyBuffer=0;
+ 296   3                                              if(snake.direction!=UP)
+ 297   3                                                      snake.direction=DOWN;
+ 298   3                                              break;
+ 299   3                              case UP:
+ 300   3                                              KeyBuffer=0;
+ 301   3                                              if(snake.direction!=DOWN)
+C51 COMPILER V9.01   GAME                                                                  06/18/2020 09:25:41 PAGE 6   
+
+ 302   3                                                      snake.direction=UP;
+ 303   3                                              break;
+ 304   3                              case RIGHT:
+ 305   3                                              KeyBuffer=0;
+ 306   3                                              if(snake.direction!=LEFT)
+ 307   3                                                      snake.direction=RIGHT;
+ 308   3                                              break;
+ 309   3                              case LEFT:
+ 310   3                                              KeyBuffer=0;
+ 311   3                                              if(snake.direction!=RIGHT)
+ 312   3                                                      snake.direction=LEFT;
+ 313   3                                              break;
+ 314   3                              default:
+ 315   3                                              break;
+ 316   3                      }                       
+ 317   2              }//结束while(1)
+ 318   1      }
+ 319          
+ 320          void Main()
+ 321          {  
+ 322   1              InitCpu();//初始化CPU
+ 323   1              Lcd_Reset(); //初始化LCD屏
+ 324   1              Lcd_WriteStr(2,1,"普中贪吃蛇");
+ 325   1              delay(5000);
+ 326   1              delay(5000);
+ 327   1              Lcd_WriteCmd(0x01);   //清除显示，并且设定地址指针为00H
+ 328   1              Lcd_Clear(0);//清屏
+ 329   1              DrawBoard();//画界面
+ 330   1              GamePlay();//玩游戏
+ 331   1              GameOver();//游戏结束
+ 332   1              while(1);//要想重玩，只能重启，可继续完善该游戏
+ 333   1      }
+ 334          
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =   1327    ----
+   CONSTANT SIZE    =     39    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =     64      12
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

@@ -1,0 +1,46 @@
+C51 COMPILER V9.59.0.0   MAIN                                                              01/23/2023 12:27:30 PAGE 1   
+
+
+C51 COMPILER V9.59.0.0, COMPILATION OF MODULE MAIN
+OBJECT MODULE PLACED IN .\Objects\main.obj
+COMPILER INVOKED BY: D:\App\keil_v5\C51\BIN\C51.EXE main.c OPTIMIZE(8,SPEED) BROWSE DEBUG OBJECTEXTEND PRINT(.\Listings\
+                    -main.lst) TABS(2) OBJECT(.\Objects\main.obj)
+
+line level    source
+
+   1          #include <reg51.h>
+   2          sbit BEEP = P2^5;//蜂鸣器控制引脚
+   3          
+   4          // 0xE1  0x08
+   5          void Beep(void) interrupt 1 //定时器中断函数
+   6          {
+   7   1        TR0=0;
+   8   1        BEEP=~BEEP;     //默认为高
+   9   1        TL0=0x1F;
+  10   1        TH0=0xF7;
+  11   1        TR0=1;
+  12   1      }
+  13          void main(void)
+  14          {
+  15   1        TMOD=0x01;      //模式一
+  16   1        TL0=0x1F;      
+  17   1        TH0=0xF7;
+  18   1        ET0=1;          //溢出中断允许
+  19   1        EA=1;
+  20   1        TR0=1;          //打开定时器
+  21   1        while(1);
+  22   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =     30    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

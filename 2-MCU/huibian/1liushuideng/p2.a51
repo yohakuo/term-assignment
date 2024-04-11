@@ -1,0 +1,30 @@
+ORG 0000H	//以下程序从0000h开始保存
+	LJMP MAIN	//跳转到main
+
+	ORG 0030H	//以下程序从0030h开始保存
+	MAIN:
+	MOV A,#0FEH		//1111 1110 0FEH
+	LOOP:			
+	MOV P2,A			//0111 1111 7FH
+	RL A				//1111 1101 0FDH
+	LCALL DELAY		//延时
+	CJNE A,#0FEH,LOOP	////1111 1110 0FEH，比较A和0feh，不相等就跳到LOOP
+	MOV A,#0BFH		//1011 1111 0BFH
+
+	LOOP1:
+	MOV P2,A
+	RR A
+	LCALL DELAY
+	CJNE A,#7FH,LOOP1
+	MOV A,#0FDH
+	SJMP LOOP		//跳转到LOOP
+	
+	DELAY:
+	MOV R7,#240
+	D1:
+	MOV R6,#240
+	DJNZ R6,$		//自减一，原地跳
+	DJNZ R7,D1	//R7自减一，原地跳
+	RET
+	
+	END

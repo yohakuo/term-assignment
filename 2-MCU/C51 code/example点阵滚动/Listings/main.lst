@@ -1,0 +1,109 @@
+C51 COMPILER V9.59.0.0   MAIN                                                              01/15/2023 11:21:10 PAGE 1   
+
+
+C51 COMPILER V9.59.0.0, COMPILATION OF MODULE MAIN
+OBJECT MODULE PLACED IN .\Objects\main.obj
+COMPILER INVOKED BY: D:\App\keil_v5\C51\BIN\C51.EXE main.c OPTIMIZE(8,SPEED) BROWSE DEBUG OBJECTEXTEND PRINT(.\Listings\
+                    -main.lst) TABS(2) OBJECT(.\Objects\main.obj)
+
+line level    source
+
+   1          #include <reg51.h>
+   2          
+   3          typedef unsigned char u8;
+   4          
+   5          // ∂®“Â74HC595øÿ÷∆π‹Ω≈
+   6          sbit SRCLK = P3 ^ 6; // “∆Œªºƒ¥Ê∆˜ ±÷” ‰»Î
+   7          sbit RCLK = P3 ^ 5;  // ¥Ê¥¢ºƒ¥Ê∆˜ ±÷” ‰»Î
+   8          sbit SER = P3 ^ 4;   // ¥Æ–– ˝æ› ‰»Î
+   9          
+  10          const unsigned char Chars[5][8] = 
+  11          {
+  12            {0x00, 0xFE, 0xFE, 0x10, 0x10, 0x10, 0xFE, 0xFE},//H
+  13            {0x00, 0x00, 0xFE, 0xFE, 0x92, 0x92, 0x92, 0x82},//E
+  14            {0x00, 0x00, 0xFE, 0xFE, 0x02, 0x02, 0x02, 0x02},//L
+  15            {0x00, 0x7C, 0xFE, 0x82, 0x82, 0x82, 0xFE, 0x7C},//O
+  16            {0x00, 0x60, 0x80, 0x85, 0x88, 0x70, 0x00, 0x00} //£ø
+  17          }; 
+  18          
+  19          unsigned char DisplayNow[8] = {0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00}; // ª∫¥Ê
+  20          
+  21          // πŸ∑Ω—” ±∫Ø ˝
+  22          void Delay1ms() //@11.0592MHz
+  23          {
+  24   1        u8 i, j;
+  25   1      
+  26   1        i = 2;
+  27   1        j = 199;
+  28   1        do
+  29   1        {
+  30   2          while (--j)
+  31   2            ;
+  32   2        } while (--i);
+  33   1      }
+  34          
+  35          void Send_74HC595(u8 dat)
+  36          {
+  37   1        u8 i;
+  38   1        for (i = 0; i < 8; i++)
+  39   1        {
+  40   2          SRCLK = 0;
+  41   2          SER = dat >> 7; // ∑¢◊Ó∏ﬂŒª
+  42   2          dat <<= 1;    // ◊Û“∆
+  43   2          SRCLK = 1;
+  44   2        }
+  45   1        RCLK = 1;// À¯¥Ê∆˜ƒ¨»œŒ™µÕµÁ∆Ω
+  46   1        RCLK = 0;
+  47   1      }
+  48          
+  49          void Matrix_Screen(u8 Data[8])
+  50          { 
+  51   1        static u8 Columns = 0;         // ¡–º∆ ˝
+  52   1        Send_74HC595(0x00);            // πÿ±’À˘”–––£¨◊º±∏«–ªª¡–
+  53   1        P0 = ~(0x01 << (7 - Columns)); // «–ªªŒ™µ„¡¡ƒ≥“ª¡–,»ÁColumns=0,0x01<<(7-Columns)=10000000,»°∑¥‘ÚŒ™0111111
+             -1æÕ «µ„¡¡µ⁄0¡–
+C51 COMPILER V9.59.0.0   MAIN                                                              01/15/2023 11:21:10 PAGE 2   
+
+  54   1        Send_74HC595(Data[Columns]);   //  ‰»Î’‚“ª¡–∂‘”¶µƒ±‡¬Î
+  55   1        Columns++;                     // ¡–º∆ ˝+1
+  56   1        if (Columns == 8)              // »Áπ˚¡–º∆ ˝Œ™8‘Ú÷ÿ–¬πÈ0
+  57   1          Columns = 0;
+  58   1      }
+  59          
+  60          void main()
+  61          {
+  62   1        u8 String[6] = {0, 1, 2, 2, 3, 4}; // ◊÷∑˚¥Æ∂‘”¶◊÷∑˚µƒÀ≥–ÚHELLO?
+  63   1        u8 i, j, t;
+  64   1        while (1)
+  65   1        {
+  66   2          for (i = 0; i < 48; i++) // 48¬÷—≠ª∑
+  67   2          {
+  68   3            for (j = 0; j < 7; j++) // 7¥Œ—≠ª∑Ω´ª∫¥Ê ˝◊È‘™Àÿ«∞“∆“ª∏ˆ£¨“≤æÕ «À˘”–µ„Õ˘◊Û“∆
+  69   3            {
+  70   4              DisplayNow[j] = DisplayNow[j + 1];
+  71   4            }
+  72   3            DisplayNow[7] = Chars[String[i / 8]][i % 8]; // Õ˘◊Ó∫Û≤π“ª∏ˆ–¬‘™ÀÿΩ¯»•°£i/8µ√≥ˆµƒ «∏√≤πƒƒ“ª∏ˆ◊÷£¨1%8µ√≥
+             -ˆµƒ «∏√≤π’‚∏ˆ◊÷µƒƒƒ“ª¡–
+  73   3            t = 100;                   // ”√”⁄—≠ª∑…®√Ëº∆¥Œ£¨100¥Œ¥Û∏≈100ms
+  74   3            while (t--)
+  75   3            {
+  76   4              Matrix_Screen(DisplayNow); // …®√Ëœ‘ æ
+  77   4              Delay1ms();          // —” ±1ms
+  78   4            }
+  79   3          }
+  80   2        }
+  81   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    204    ----
+   CONSTANT SIZE    =      6    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =     49       6
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

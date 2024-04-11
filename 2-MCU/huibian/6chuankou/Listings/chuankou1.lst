@@ -1,0 +1,101 @@
+A51 MACRO ASSEMBLER  CHUANKOU1                                                            04/17/2023 13:30:06 PAGE     1
+
+
+MACRO ASSEMBLER A51 V8.2.7.0
+OBJECT MODULE PLACED IN .\Objects\chuankou1.obj
+ASSEMBLER INVOKED BY: D:\App\keil_v5\C51\BIN\A51.EXE chuankou1.a51 SET(SMALL) DEBUG PRINT(.\Listings\chuankou1.lst) OBJE
+                      CT(.\Objects\chuankou1.obj) EP
+
+LOC  OBJ            LINE     SOURCE
+
+0000                   1             ORG 0000H
+0000 020200            2             LJMP MAIN
+0200                   3             ORG 0200H
+0200                   4     MAIN:
+0200 758160            5             MOV SP,#60H
+0203 758920            6             MOV TMOD,#20H   ;ÉèÖÃT1Îª·½Ê½2
+0206 759850            7             MOV SCON,#50H   ;ÉèÖÃ´®¿ÚÎª·½Ê½1
+0209 758700            8             MOV PCON,#00H   ;²¨ÌØÂÊ²»±¶Ôö
+020C 758DFD            9             MOV TH1,#0FDH
+020F 758BFD           10             MOV TL1,#0FDH   ;ÉèÖÃ²¨ÌØÂÊÎª9600
+0212 D28E             11             SETB TR1                ;T1¿ªÊ¼¼ÆÊ
+0214 7E05             12             MOV R6,#5               ;±ê¼Ç°´ÏÂ°´¼ü´ÎÊ
+0216                  13     LOOP:
+0216 E590             14             MOV A,P1
+0218 B4FEFB           15             CJNE A,#0XFE,LOOP       ;²»µÈËµÃ÷°´¼üÎ´°´ÏÂ¼ÌÐøµÈ´
+021B 120256           16             LCALL DELAY10MS         ;Ïû¶¶
+021E B4FEF5           17             CJNE A,#0XFE,LOOP       ;ÔÙ´ÎÅÐ¶Ï°´¼üÊÇ·ñ°´ÏÂ
+0221 DE02             18             DJNZ R6,K1                      ;¼Ä´æÆ÷ÄÚÈÝ¼õÒ»£¬·Ç0×ªÒÆ
+0223 7E05             19             MOV R6,#5
+0225                  20     K1:                                     ;µÚÒ»´Î°´ÏÂ°´¼ü
+0225 BE0408           21             CJNE R6,#4,K2
+0228 7441             22             MOV A,#'A'
+022A F599             23             MOV SBUF,A              ;¿ªÊ¼·¢ËÍ£¬·¢ËÍ×ÖÄ¸ÎªA
+022C 74FE             24             MOV A,#0XFE             ;led1ÁÁ
+022E F580             25             MOV P0,A
+0230                  26     K2:                                     ;µÚ¶þ´Î°´ÏÂ°´¼ü
+0230 BE0307           27             CJNE R6,#3,K3
+0233 759942           28             MOV SBUF,#'B'
+0236 74FD             29             MOV A,#0XFD             ;led2ÁÁ
+0238 F580             30             MOV P0,A
+023A                  31     K3:                                     ;µÚÈ´Î°´ÏÂ°´¼ü
+023A BE0207           32             CJNE R6,#2,K4
+023D 759943           33             MOV SBUF,#'C'
+0240 74F6             34             MOV A,#0XF6             ;¶¼ÁÁ
+0242 F580             35             MOV P0,A
+0244                  36     K4:                                     ;µÚËÄ´Î°´ÏÂ°´¼ü
+0244 BE0107           37             CJNE R6,#1,WAIT
+0247 759930           38             MOV SBUF,#'0'
+024A 74FF             39             MOV A,#0XFF     ;¶¼Ãð
+024C F580             40             MOV P0,A
+024E                  41     WAIT:                                   ;µÈ´°´¼ü
+024E 3099FD           42             JNB TI,$                        ;Îª0Ô­µØÌø£¬µÈ´·¢ËÍ½áÊø
+0251 C299             43             CLR TI                          ;Çå0
+0253 020216           44             LJMP LOOP
+0256                  45     DELAY10MS:                              ;@11.0592MHz
+0256 C030             46             PUSH 30H
+0258 C031             47             PUSH 31H
+025A 753012           48             MOV 30H,#18
+025D 7531E6           49             MOV 31H,#230
+0260                  50     NEXT:
+0260 D531FD           51             DJNZ 31H,NEXT
+0263 D530FA           52             DJNZ 30H,NEXT
+0266 D031             53             POP 31H
+0268 D030             54             POP 30H
+026A 22               55             RET
+                      56     
+                      57     END
+A51 MACRO ASSEMBLER  CHUANKOU1                                                            04/17/2023 13:30:06 PAGE     2
+
+SYMBOL TABLE LISTING
+------ ----- -------
+
+
+N A M E             T Y P E  V A L U E   ATTRIBUTES
+
+DELAY10MS. . . . .  C ADDR   0256H   A   
+K1 . . . . . . . .  C ADDR   0225H   A   
+K2 . . . . . . . .  C ADDR   0230H   A   
+K3 . . . . . . . .  C ADDR   023AH   A   
+K4 . . . . . . . .  C ADDR   0244H   A   
+LOOP . . . . . . .  C ADDR   0216H   A   
+MAIN . . . . . . .  C ADDR   0200H   A   
+NEXT . . . . . . .  C ADDR   0260H   A   
+P0 . . . . . . . .  D ADDR   0080H   A   
+P1 . . . . . . . .  D ADDR   0090H   A   
+PCON . . . . . . .  D ADDR   0087H   A   
+SBUF . . . . . . .  D ADDR   0099H   A   
+SCON . . . . . . .  D ADDR   0098H   A   
+SP . . . . . . . .  D ADDR   0081H   A   
+TH1. . . . . . . .  D ADDR   008DH   A   
+TI . . . . . . . .  B ADDR   0098H.1 A   
+TL1. . . . . . . .  D ADDR   008BH   A   
+TMOD . . . . . . .  D ADDR   0089H   A   
+TR1. . . . . . . .  B ADDR   0088H.6 A   
+WAIT . . . . . . .  C ADDR   024EH   A   
+
+
+REGISTER BANK(S) USED: 0 
+
+
+ASSEMBLY COMPLETE.  0 WARNING(S), 0 ERROR(S)

@@ -1,0 +1,60 @@
+A51 MACRO ASSEMBLER  P2                                                                   04/04/2023 12:06:20 PAGE     1
+
+
+MACRO ASSEMBLER A51 V8.2.7.0
+OBJECT MODULE PLACED IN .\Objects\p2.obj
+ASSEMBLER INVOKED BY: D:\App\keil_v5\C51\BIN\A51.EXE p2.a51 SET(SMALL) DEBUG PRINT(.\Listings\p2.lst) OBJECT(.\Objects\p
+                      2.obj) EP
+
+LOC  OBJ            LINE     SOURCE
+
+0000                   1     ORG 0000H        
+0000 020030            2             LJMP MAIN        
+                       3     
+0030                   4             ORG 0030H        
+0030                   5             MAIN:
+0030 74FE              6             MOV A,#0FEH              
+0032                   7             LOOP:                   
+0032 F5A0              8             MOV P2,A                         
+0034 23                9             RL A                             
+0035 12004A           10             LCALL DELAY              
+0038 B4FEF7           11             CJNE A,#0FEH,LOOP        
+003B 74BF             12             MOV A,#0BFH              
+                      13     
+003D                  14             LOOP1:
+003D F5A0             15             MOV P2,A
+003F 03               16             RR A
+0040 12004A           17             LCALL DELAY
+0043 B47FF7           18             CJNE A,#7FH,LOOP1
+0046 74FD             19             MOV A,#0FDH
+0048 80E8             20             SJMP LOOP                
+                      21             
+004A                  22             DELAY:
+004A 7FF0             23             MOV R7,#240
+004C                  24             D1:
+004C 7EF0             25             MOV R6,#240
+004E DEFE             26             DJNZ R6,$                
+0050 DFFA             27             DJNZ R7,D1       
+0052 22               28             RET
+                      29             
+                      30             END
+A51 MACRO ASSEMBLER  P2                                                                   04/04/2023 12:06:20 PAGE     2
+
+SYMBOL TABLE LISTING
+------ ----- -------
+
+
+N A M E             T Y P E  V A L U E   ATTRIBUTES
+
+D1 . . . . . . . .  C ADDR   004CH   A   
+DELAY. . . . . . .  C ADDR   004AH   A   
+LOOP . . . . . . .  C ADDR   0032H   A   
+LOOP1. . . . . . .  C ADDR   003DH   A   
+MAIN . . . . . . .  C ADDR   0030H   A   
+P2 . . . . . . . .  D ADDR   00A0H   A   
+
+
+REGISTER BANK(S) USED: 0 
+
+
+ASSEMBLY COMPLETE.  0 WARNING(S), 0 ERROR(S)

@@ -1,0 +1,242 @@
+C51 COMPILER V9.01   KEY                                                                   06/18/2020 09:25:42 PAGE 1   
+
+
+C51 COMPILER V9.01, COMPILATION OF MODULE KEY
+OBJECT MODULE PLACED IN Key.OBJ
+COMPILER INVOKED BY: D:\keil4\C51\BIN\C51.EXE Key.c BROWSE DEBUG OBJECTEXTEND
+
+line level    source
+
+   1          #include "stc.H"
+   2          #include "Key.h"
+   3          #define OS_LONG_KEY_EN 1//如果应用中需要处理长按键动作，则定义为1，否则定义为0（如果应用中不需要处理长按动
+             -作，则建议定义为0，以节省代码空间）
+   4          #define GPIO_KEY P1
+   5          
+   6          unsigned char KeyValue;//用来存放读取到的键值
+   7          unsigned char code DIG_CODE[17]={
+   8          0,0,0,0,0,5,0,0,6,0,4,0,0,3,0,0,0};
+   9          /***********************************************
+  10          功能说明：按键驱动扫描
+  11          入口参数：无
+  12          出口参数：扫描一次键盘以获得按键句柄
+  13          注：交OSReadKey（）函数调用
+  14          ***********************************************/
+  15          unsigned char KeyDown(void)
+  16          {
+  17   1              char a=0;
+  18   1              GPIO_KEY=0x0f;
+  19   1              if(GPIO_KEY!=0x0f)//读取按键是否按下
+  20   1              {
+  21   2                      Delay10ms();//延时10ms进行消抖
+  22   2                      if(GPIO_KEY!=0x0f)//再次检测键盘是否按下
+  23   2                      {
+  24   3                              
+  25   3                              //测试列
+  26   3                              GPIO_KEY=0X0F;
+  27   3                              switch(GPIO_KEY)
+  28   3                              {
+  29   4                                      case(0X07):     KeyValue=0;break;
+  30   4                                      case(0X0b):     KeyValue=1;break;
+  31   4                                      case(0X0d): KeyValue=2;break;
+  32   4                                      case(0X0e):     KeyValue=3;break;
+  33   4                              }
+  34   3                              //测试行
+  35   3                              GPIO_KEY=0XF0;
+  36   3                              switch(GPIO_KEY)
+  37   3                              {
+  38   4                                      case(0X70):     KeyValue=KeyValue;break;
+  39   4                                      case(0Xb0):     KeyValue=KeyValue+4;break;
+  40   4                                      case(0Xd0): KeyValue=KeyValue+8;break;
+  41   4                                      case(0Xe0):     KeyValue=KeyValue+12;break;
+  42   4                              }
+  43   3                              while((a<50)&&(GPIO_KEY!=0xf0))  //检测按键松手检测
+  44   3                              {
+  45   4                                      Delay10ms();
+  46   4                                      a++;
+  47   4                              }
+  48   3                      }
+  49   2              }
+  50   1       
+  51   1              return KeyValue;           
+  52   1      }
+  53          /**********************************************
+  54          功能说明：读取按键动作
+C51 COMPILER V9.01   KEY                                                                   06/18/2020 09:25:42 PAGE 2   
+
+  55          入口参数：无
+  56          出口参数：返回按键动作
+  57          注意：
+  58          没有按键动作，则返回0，
+  59          使用矩阵按键:向上S12；向下S6;向左S12;向右S9;
+  60          ***********************************************/
+  61          unsigned char OSReadKey(void)
+  62          {
+  63   1              static unsigned char KeyEventCnt=0;
+  64   1              static unsigned char KeySampleCnt=0;
+  65   1              static unsigned char KeyBuffer=0;
+  66   1      #define SHORT_ON_DITHERING_COUNTER 3//定义短按按下去抖时间
+  67   1      #define SHORT_OFF_DITHERING_COUNTER 3//定义短按松开去抖时间，一般与短按按下去抖时间相同
+  68   1      
+  69   1      #if OS_LONG_KEY_EN>0
+  70   1              static unsigned int LongKeySampleCnt=0;
+  71   1              #define LONG_ON_DITHERING_COUNTER 250//定义长按按下确认需要的时间，如果是每1MS调用一次OSReadKey()，则1000
+             -意味着这个时间为1S
+  72   1              #define LONG_OFF_DITHERING_COUNTER 3//定义长按松开去抖时间，一般和短按去抖时间相同
+  73   1      #endif
+  74   1              unsigned char KeyTemp;
+  75   1              KeyTemp=DIG_CODE[KeyDown()];
+  76   1              switch(KeyEventCnt)
+  77   1              {
+  78   2                      case 0:
+  79   2                              if(KeyTemp!=0)
+  80   2                              {
+  81   3                                      KeySampleCnt=0;
+  82   3                                      KeyBuffer=KeyTemp;
+  83   3                                      KeyEventCnt=1;     
+  84   3                              }
+  85   2                              return 0;//no key on,return 0
+  86   2                              break;
+  87   2                      
+  88   2                      #if OS_LONG_KEY_EN>0    
+  89   2                      case 1:
+  90   2                              if(KeyTemp!=KeyBuffer)
+  91   2                              {
+  92   3                                      KeyEventCnt=0;
+  93   3                                      return 0;//is dithering,return 0
+  94   3                              }
+  95   2                              else
+  96   2                              {
+  97   3                                      if(++KeySampleCnt>SHORT_ON_DITHERING_COUNTER)
+  98   3                                      {
+  99   4                                              KeySampleCnt=0;
+ 100   4                                              KeyEventCnt=2;
+ 101   4                                              LongKeySampleCnt=0;
+ 102   4                                              return ((KeyBuffer-1)<<2)+1;//sure that key on,return (KeyBuffer-1)<<2+1
+ 103   4                                      }
+ 104   3                                      else
+ 105   3                                              return 0;//not sure that key on,return 0                 
+ 106   3                              }
+ 107   2                              break;
+ 108   2                                      
+ 109   2                      case 2:
+ 110   2                              if(++LongKeySampleCnt>LONG_ON_DITHERING_COUNTER)
+ 111   2                              {
+ 112   3                                      KeySampleCnt=0;
+ 113   3                                      KeyEventCnt=3;
+ 114   3                                      return ((KeyBuffer-1)<<2)+2; //sure that key long on,return (KeyBuffer-1)<<2+2
+ 115   3                              }
+C51 COMPILER V9.01   KEY                                                                   06/18/2020 09:25:42 PAGE 3   
+
+ 116   2                              else
+ 117   2                              {
+ 118   3                                      if(KeyTemp!=KeyBuffer)
+ 119   3                                      {
+ 120   4                                              if(++KeySampleCnt>SHORT_OFF_DITHERING_COUNTER)
+ 121   4                                              {
+ 122   5                                                      KeyEventCnt=0;
+ 123   5                                                      return ((KeyBuffer-1)<<2)+3;//after short on to off,(KeyBuffer-1)<<2+3
+ 124   5                                              }
+ 125   4                                              else
+ 126   4                                                      return 0;
+ 127   4                                      }
+ 128   3                                      else
+ 129   3                                      {
+ 130   4                                              KeySampleCnt=0;
+ 131   4                                              return 0;
+ 132   4                                      }
+ 133   3                              }
+ 134   2                              break;
+ 135   2                      
+ 136   2                      case 3:
+ 137   2                              if(KeyTemp!=KeyBuffer)
+ 138   2                              {
+ 139   3                                      if(++KeySampleCnt>LONG_OFF_DITHERING_COUNTER)
+ 140   3                                      {
+ 141   4                                              KeyEventCnt=0;
+ 142   4                                              return ((KeyBuffer-1)<<2)+4;  //after long key on turn to off,(KeyBuffer-1)<<2+4
+ 143   4                                      }
+ 144   3                                      else
+ 145   3                                              return 0;
+ 146   3                              }
+ 147   2                              else
+ 148   2                              {
+ 149   3                                      KeySampleCnt=0;
+ 150   3                                      return 0;
+ 151   3                              }
+ 152   2                              break;
+ 153   2                      
+ 154   2                      #else
+                              case 1:
+                                      if(KeyTemp!=KeyBuffer)
+                                      {
+                                              KeyEventCnt=0;
+                                              return 0;//is dithering,return 0
+                                      }
+                                      else
+                                      {
+                                              if(++KeySampleCnt>=SHORT_ON_DITHERING_COUNTER)
+                                              {
+                                                      KeySampleCnt=0;
+                                                      KeyEventCnt=2;
+                                                      return ((KeyBuffer-1)<<2)+1;//sure that key on,return (KeyBuffer-1)<<2+1
+                                              }
+                                              else
+                                                      return 0;//not sure that key on,return 0                 
+                                      }
+                                      break;
+                                              
+                              case 2:
+                                      if(KeyTemp!=KeyBuffer)
+                                      {
+                                              if(++KeySampleCnt>=SHORT_OFF_DITHERING_COUNTER)
+C51 COMPILER V9.01   KEY                                                                   06/18/2020 09:25:42 PAGE 4   
+
+                                              {
+                                                      KeyEventCnt=0;
+                                                      return ((KeyBuffer-1)<<2)+3;//after short on to off,(KeyBuffer-1)<<2+3
+                                              }
+                                              else
+                                                      return 0;
+                                      }
+                                      else
+                                      {
+                                              KeySampleCnt=0;
+                                              return 0;
+                                      }
+                                      break;
+                              #endif
+ 192   2      
+ 193   2                      default:break;
+ 194   2              }
+ 195   1              return 0;
+ 196   1      }
+ 197          
+ 198          /*******************************************************************************
+ 199          * 函 数 名         : Delay10ms
+ 200          * 函数功能                 : 延时函数，延时10ms
+ 201          * 输    入         : 无
+ 202          * 输    出         : 无
+ 203          *******************************************************************************/
+ 204          void Delay10ms(void)   //误差 0us
+ 205          {
+ 206   1          unsigned char a,b,c;
+ 207   1          for(c=1;c>0;c--)
+ 208   1              for(b=38;b>0;b--)
+ 209   1                  for(a=130;a>0;a--);
+ 210   1      }
+ 211          /***************************************************************/
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    329    ----
+   CONSTANT SIZE    =     17    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =      6       1
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

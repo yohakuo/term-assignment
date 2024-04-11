@@ -1,0 +1,104 @@
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                    04/04/2023  12:43:11  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22.2.0, INVOKED BY:
+D:\APP\KEIL_V5\C51\BIN\BL51.EXE .\Objects\p1.obj TO .\Objects\cliushuideng PRINT (.\Listings\cliushuideng.m51)
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  .\Objects\p1.obj (P1)
+  D:\APP\KEIL_V5\C51\LIB\C51S.LIB (?C_STARTUP)
+
+
+LINK MAP OF MODULE:  .\Objects\cliushuideng (P1)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            IDATA   0008H     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+            CODE    0003H     0047H     UNIT         ?PR?MAIN?P1
+            CODE    004AH     0012H     UNIT         ?PR?_DELAY_10US?P1
+            CODE    005CH     000CH     UNIT         ?C_C51STARTUP
+
+
+
+OVERLAY MAP OF MODULE:   .\Objects\cliushuideng (P1)
+
+
+SEGMENT
+  +--> CALLED SEGMENT
+---------------------
+?C_C51STARTUP
+  +--> ?PR?MAIN?P1
+
+?PR?MAIN?P1
+  +--> ?PR?_DELAY_10US?P1
+
+
+
+SYMBOL TABLE OF MODULE:  .\Objects\cliushuideng (P1)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        P1
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:0090H         PUBLIC        P1
+  D:00A0H         PUBLIC        P2
+  D:00B0H         PUBLIC        P3
+  D:00A8H         PUBLIC        IE
+  D:00B8H         PUBLIC        IP
+  C:0003H         PUBLIC        main
+  D:0098H         PUBLIC        SCON
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  04/04/2023  12:43:11  PAGE 2
+
+
+  D:0088H         PUBLIC        TCON
+  C:0051H         PUBLIC        _delay_10us
+  D:00C8H         PUBLIC        T2CON
+  D:00D0H         PUBLIC        PSW
+  -------         PROC          L?0021
+  -------         ENDPROC       L?0021
+  -------         PROC          _DELAY_10US
+  D:0006H         SYMBOL        ten_us
+  C:0051H         LINE#         6
+  C:0051H         LINE#         7
+  C:0051H         LINE#         8
+  C:005BH         LINE#         9
+  -------         ENDPROC       _DELAY_10US
+  -------         PROC          MAIN
+  -------         DO            
+  D:0002H         SYMBOL        i
+  -------         ENDDO         
+  C:0003H         LINE#         11
+  C:0003H         LINE#         12
+  C:0003H         LINE#         13
+  C:0003H         LINE#         14
+  C:0003H         LINE#         15
+  C:0003H         LINE#         16
+  C:0006H         LINE#         17
+  C:0006H         LINE#         18
+  C:0013H         LINE#         19
+  C:0016H         LINE#         20
+  C:001CH         LINE#         21
+  C:001CH         LINE#         22
+  C:001FH         LINE#         23
+  C:001FH         LINE#         24
+  C:002CH         LINE#         25
+  C:002FH         LINE#         26
+  C:003AH         LINE#         27
+  C:003AH         LINE#         28
+  -------         ENDPROC       MAIN
+  -------         ENDMOD        P1
+
+Program Size: data=9.0 xdata=0 code=104
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)

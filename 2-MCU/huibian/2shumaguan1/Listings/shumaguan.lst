@@ -1,0 +1,61 @@
+A51 MACRO ASSEMBLER  SHUMAGUAN                                                            04/04/2023 14:41:28 PAGE     1
+
+
+MACRO ASSEMBLER A51 V8.2.7.0
+OBJECT MODULE PLACED IN .\Objects\shumaguan.obj
+ASSEMBLER INVOKED BY: D:\App\keil_v5\C51\BIN\A51.EXE shumaguan.a51 SET(SMALL) DEBUG PRINT(.\Listings\shumaguan.lst) OBJE
+                      CT(.\Objects\shumaguan.obj) EP
+
+LOC  OBJ            LINE     SOURCE
+
+                       1     ;; µ•∏ˆ ¬Îπ‹—≠ª∑œ‘ æ0~9 ◊÷
+0000                   2                     ORG     000H
+0000                   3     START:
+0000 7C00              4                     MOV R4,#0                               ;—≠ª∑œ‘ æ10¥Œ
+                       5     
+0002                   6     LOOP:                                                   ;—≠ª∑œ‘ æ ◊÷£¨R4µ›‘ˆ
+0002 EC                7                     MOV A,R4
+0003 900011            8                     MOV DPTR,#NTABLE
+0006 93                9                     MOVC A,@A+DPTR
+0007 F580             10                     MOV P0,A
+0009 111B             11                     CALL DELAY
+000B 0C               12                     INC R4
+000C BC0AF3           13                     CJNE    R4,#10,LOOP             ;R4µ›‘ˆµΩ10 ±Ω· ¯—≠ª∑
+000F 80EF             14                     JMP START
+                      15     
+                      16                     ;;  ¬Îπ‹œ‘ æ±‡¬Î±Ì
+0011 3F065B4F         17     NTABLE: DB      3FH,06H,5BH,4FH,66H,6DH,7DH,07H,7FH,6FH
+0015 666D7D07                
+0019 7F6F                    
+                      18     
+001B                  19     DELAY:                                                  ;—” ±500ms
+001B 7932             20                     MOV R1,#50
+001D 7A14             21     D1:             MOV R2,#20
+001F 7BF8             22     D2:             MOV R3,#248
+0021 DBFE             23                     DJNZ    R3,$
+0023 DAFA             24                     DJNZ    R2,D2
+0025 D9F6             25                     DJNZ    R1,D1
+                      26     
+0027 22               27                     RET
+                      28                     END
+A51 MACRO ASSEMBLER  SHUMAGUAN                                                            04/04/2023 14:41:28 PAGE     2
+
+SYMBOL TABLE LISTING
+------ ----- -------
+
+
+N A M E             T Y P E  V A L U E   ATTRIBUTES
+
+D1 . . . . . . . .  C ADDR   001DH   A   
+D2 . . . . . . . .  C ADDR   001FH   A   
+DELAY. . . . . . .  C ADDR   001BH   A   
+LOOP . . . . . . .  C ADDR   0002H   A   
+NTABLE . . . . . .  C ADDR   0011H   A   
+P0 . . . . . . . .  D ADDR   0080H   A   
+START. . . . . . .  C ADDR   0000H   A   
+
+
+REGISTER BANK(S) USED: 0 
+
+
+ASSEMBLY COMPLETE.  0 WARNING(S), 0 ERROR(S)

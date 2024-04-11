@@ -1,0 +1,83 @@
+C51 COMPILER V9.59.0.0   JUZHEN                                                            04/17/2023 09:02:30 PAGE 1   
+
+
+C51 COMPILER V9.59.0.0, COMPILATION OF MODULE JUZHEN
+OBJECT MODULE PLACED IN .\Objects\juzhen.obj
+COMPILER INVOKED BY: D:\App\keil_v5\C51\BIN\C51.EXE juzhen.c OPTIMIZE(8,SPEED) BROWSE DEBUG OBJECTEXTEND PRINT(.\Listing
+                    -s\juzhen.lst) TABS(2) OBJECT(.\Objects\juzhen.obj)
+
+line level    source
+
+   1          #include<reg52.h>
+   2          
+   3          unsigned char num=0;
+   4          unsigned char col[8]={0x81,0x02,0x04,0x08,0x10,0x20,0x40,0x80};//点亮
+   5          unsigned char row[3][8]=
+   6          {{0xFF,0XFF,0X00,0X00,0XFC,0XFC,0xFF,0XFF},//L
+   7          {0xFF,0X81,0x00,0x3C,0x38,0x00,0X81,0xFC},//Q
+   8          {0xCF,0x87,0x83,0xC1,0x83,0x87,0xCF,0xFF}};//爱心
+   9          
+  10          //用来显示点阵的每一帧
+  11          unsigned char sav[8]={0x00,0x00,0x80,0x00,0x00,0x00,0x00,0x00};
+  12          
+  13          void delay(unsigned int t)
+  14          {
+  15   1        while(t--);
+  16   1      }
+  17          
+  18          //扫描显示每一顿（缓存数组）
+  19          void Matrix_Screen(unsigned char Data[8])
+  20          {
+  21   1        static unsigned char j;
+  22   1        for(j=0;j<8;j++)  //单个点亮字母
+  23   1        {
+  24   2          P3=col[j];  //第j+1列置为高电平，具备点亮条件
+  25   2          P0=Data[j]; //显示形状
+  26   2          delay(10);  //动态扫描，视觉暂缓
+  27   2          P3=~(col[j]); //第j+1列置为高电平（防止后面控制其它列的哪几个亮的时候，该列也亮了）
+  28   2          //全部初始化一遍
+  29   2          P3=0x80;  //列，P3口全置为低电平
+  30   2          P0=0xff;  //行，P0口全置为高电平
+  31   2        }
+  32   1          j=0;      //全部结束后，回归首行
+  33   1      }
+  34          
+  35          void main()
+  36          {
+  37   1        unsigned char i;    //saomiao
+  38   1        unsigned char j;    //xianshi
+  39   1        unsigned char t;
+  40   1        while(1)
+  41   1        {
+  42   2          for(i=0;i<24;i++)
+  43   2          {
+  44   3            for(j=0;j<7;j++)
+  45   3            {
+  46   4              sav[j]=sav[j+1];    //缓存数据左移一位
+  47   4            }
+  48   3            sav[7]=row[i/8][i%8];  //在最后一列补充列的亮灭情况
+  49   3            t=60;
+  50   3            while(t--)
+  51   3            {
+  52   4              Matrix_Screen(sav);
+  53   4              delay(10);
+  54   4            }
+C51 COMPILER V9.59.0.0   JUZHEN                                                            04/17/2023 09:02:30 PAGE 2   
+
+  55   3          }
+  56   2        }
+  57   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    180    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =     42       4
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

@@ -1,0 +1,66 @@
+C51 COMPILER V9.59.0.0   CHUANKOU2                                                         04/12/2023 21:46:41 PAGE 1   
+
+
+C51 COMPILER V9.59.0.0, COMPILATION OF MODULE CHUANKOU2
+OBJECT MODULE PLACED IN .\Objects\chuankou2.obj
+COMPILER INVOKED BY: D:\App\keil_v5\C51\BIN\C51.EXE chuankou2.c OPTIMIZE(8,SPEED) BROWSE DEBUG OBJECTEXTEND PRINT(.\List
+                    -ings\chuankou2.lst) TABS(2) OBJECT(.\Objects\chuankou2.obj)
+
+line level    source
+
+   1          #include <reg51.h>
+   2          #define u8 unsigned char
+   3          #define u16 unsigned int
+   4          
+   5          sbit led1=P0^0;
+   6          sbit led2=P0^3;
+   7          
+   8          void Delay10ms() // 延时约10ms
+   9          {
+  10   1        u16 i;
+  11   1        i = 1000;
+  12   1        while (i--);
+  13   1      }
+  14          
+  15          void main()
+  16          {
+  17   1        SCON = 0x50; // 配置串口模式1
+  18   1        PCON |=0x00;//波特率不翻倍
+  19   1        TMOD = 0x20; // 配置定时器1 模式2
+  20   1        TH1 = 0xFD; // 配置重载
+  21   1        TL1 = 0xFD; // 配置初始  波特率9600
+  22   1        TR1 = 1; // 启动定时器
+  23   1        ES = 1; // 打开串口中断
+  24   1        EA = 1; // 打开总中断
+  25   1        led1=led2=1;
+  26   1        
+  27   1        while (1)
+  28   1        {
+  29   2          if (RI)       //接收完毕
+  30   2          {
+  31   3          RI=0;
+  32   3          switch(SBUF)
+  33   3          {
+  34   4            case '0':led1=led2=1;break;       //全灭
+  35   4            case 'A':led1=0;led2=1;break;     //led1亮
+  36   4            case 'B':led1=1;led2=0;break;     //led2亮
+  37   4            case 'C':led1=led2=0;break;       //全亮
+  38   4          }
+  39   3          
+  40   3          }
+  41   2        }
+  42   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =     81    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

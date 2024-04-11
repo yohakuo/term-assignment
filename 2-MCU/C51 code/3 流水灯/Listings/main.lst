@@ -1,0 +1,74 @@
+C51 COMPILER V9.59.0.0   MAIN                                                              04/03/2023 15:33:53 PAGE 1   
+
+
+C51 COMPILER V9.59.0.0, COMPILATION OF MODULE MAIN
+OBJECT MODULE PLACED IN .\Objects\main.obj
+COMPILER INVOKED BY: D:\App\keil_v5\C51\BIN\C51.EXE main.c OPTIMIZE(8,SPEED) BROWSE DEBUG OBJECTEXTEND PRINT(.\Listings\
+                    -main.lst) TABS(2) OBJECT(.\Objects\main.obj)
+
+line level    source
+
+   1          //#include "reg52.h"
+   2          //#define led_port P2                 //定义P2端口,重命名
+   3          sfr P2 = 0xA0;
+   4          typedef unsigned int u8;
+   5          typedef unsigned int u16;
+   6          
+   7          
+   8          void delay_10us(u16 ten_us)
+   9          {
+  10   1          while(ten_us--);
+  11   1      }
+  12          
+  13          void main()
+  14          {  
+  15   1        u8 i=0;
+  16   1        while(1){
+  17   2          for(i=0;i<8;i++)
+  18   2          {
+  19   3            P2=~(0x01<<i);
+  20   3            delay_10us(50000);
+  21   3          }
+  22   2        }
+  23   1      }
+  24          //sbit LED1=P2^0; 
+  25          //sbit LED2=P2^1; 
+  26          //sbit LED3=P2^2; 
+  27          //sbit LED4=P2^3; 
+  28          //sbit LED5=P2^4; 
+  29          //sbit LED6=P2^5; 
+  30          //sbit LED7=P2^6;
+  31          //sbit LED8=P2^7; 
+  32          
+  33          //void main()
+  34          //{   
+  35          //  int j;
+  36          //  while(1){
+  37          //    j++;
+  38          //    LED1=j%8;
+  39          //    LED2=(j+1)%8;
+  40          //    LED3=(j+2)%8;
+  41          //    LED4=(j+3)%8;
+  42          //    LED5=(j+4)%8;
+  43          //    LED6=(j+5)%8;
+  44          //    LED7=(j+6)%8;
+  45          //    LED81=(j+7)%8;
+  46          //    for(i=0;i<=30000;j++);
+  47          //  }
+  48          //}
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =     50    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+C51 COMPILER V9.59.0.0   MAIN                                                              04/03/2023 15:33:53 PAGE 2   
+
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

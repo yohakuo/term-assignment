@@ -1,0 +1,100 @@
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                    04/10/2023  08:55:13  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22.2.0, INVOKED BY:
+D:\APP\KEIL_V5\C51\BIN\BL51.EXE .\Objects\p4.obj TO .\Objects\anjian PRINT (.\Listings\anjian.m51)
+
+
+INPUT MODULES INCLUDED:
+  .\Objects\p4.obj (P4)
+
+
+LINK MAP OF MODULE:  .\Objects\anjian (P4)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0162H     ABSOLUTE     
+
+
+
+SYMBOL TABLE OF MODULE:  .\Objects\anjian (P4)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        P4
+  C:0112H         SYMBOL        CHECK
+  C:0123H         SYMBOL        COL1
+  C:0131H         SYMBOL        COL2
+  C:013FH         SYMBOL        COL3
+  C:014DH         SYMBOL        COL4
+  C:0158H         SYMBOL        DELAY
+  C:015AH         SYMBOL        DLY1
+  C:015CH         SYMBOL        DLY2
+  C:010AH         SYMBOL        KEYDOWN
+  D:0080H         SYMBOL        P0
+  D:0090H         SYMBOL        P1
+  D:00A0H         SYMBOL        P2
+  C:0100H         SYMBOL        START
+  C:0000H         LINE#         2
+  C:0100H         LINE#         5
+  C:0102H         LINE#         6
+  C:0104H         LINE#         7
+  C:0105H         LINE#         8
+  C:0107H         LINE#         9
+  C:0108H         LINE#         10
+  C:010AH         LINE#         12
+  C:010CH         LINE#         13
+  C:010FH         LINE#         14
+  C:0112H         LINE#         16
+  C:0115H         LINE#         17
+  C:0118H         LINE#         18
+  C:011BH         LINE#         19
+  C:011DH         LINE#         20
+  C:0120H         LINE#         21
+  C:0123H         LINE#         23
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  04/10/2023  08:55:13  PAGE 2
+
+
+  C:0126H         LINE#         24
+  C:0127H         LINE#         25
+  C:0128H         LINE#         26
+  C:0129H         LINE#         27
+  C:012BH         LINE#         29
+  C:012EH         LINE#         30
+  C:0131H         LINE#         32
+  C:0134H         LINE#         33
+  C:0135H         LINE#         34
+  C:0136H         LINE#         35
+  C:0137H         LINE#         36
+  C:0139H         LINE#         37
+  C:013CH         LINE#         38
+  C:013FH         LINE#         40
+  C:0142H         LINE#         41
+  C:0143H         LINE#         42
+  C:0144H         LINE#         43
+  C:0145H         LINE#         44
+  C:0147H         LINE#         45
+  C:014AH         LINE#         46
+  C:014DH         LINE#         48
+  C:014EH         LINE#         49
+  C:014FH         LINE#         50
+  C:0150H         LINE#         51
+  C:0152H         LINE#         52
+  C:0155H         LINE#         53
+  C:0158H         LINE#         55
+  C:015AH         LINE#         57
+  C:015CH         LINE#         59
+  C:015EH         LINE#         60
+  C:015FH         LINE#         61
+  C:0161H         LINE#         62
+  -------         ENDMOD        P4
+
+Program Size: data=8.0 xdata=0 code=354
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)

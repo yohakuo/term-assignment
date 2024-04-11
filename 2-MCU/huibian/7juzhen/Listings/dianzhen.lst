@@ -1,0 +1,65 @@
+A51 MACRO ASSEMBLER  DIANZHEN                                                             04/17/2023 08:23:54 PAGE     1
+
+
+MACRO ASSEMBLER A51 V8.2.7.0
+OBJECT MODULE PLACED IN .\Objects\dianzhen.obj
+ASSEMBLER INVOKED BY: D:\App\keil_v5\C51\BIN\A51.EXE dianzhen.a51 SET(SMALL) DEBUG PRINT(.\Listings\dianzhen.lst) OBJECT
+                      (.\Objects\dianzhen.obj) EP
+
+LOC  OBJ            LINE     SOURCE
+
+0000                   1             ORG 0000H
+0000 020030            2             LJMP START
+0030                   3             ORG 0030H
+0030                   4     START:
+0030 7800              5             MOV R0,#0
+0032 7900              6             MOV R1,#0
+0034                   7     MAIN:
+0034 E8                8             MOV A,R0
+0035 90005F            9             MOV DPTR,#TABLEC
+0038 93               10             MOVC A,@A+DPTR
+0039 F5B0             11             MOV P3,A
+003B E8               12             MOV A,R0
+003C 900057           13             MOV DPTR,#TABLER
+003F 93               14             MOVC A,@A+DPTR
+0040 F580             15             MOV P0,A
+0042 12004C           16             LCALL DELAY100US
+0045 08               17             INC R0
+0046 B808EB           18             CJNE R0,#8,MAIN
+0049 B80AE4           19             CJNE R0,#10,START
+004C                  20     DELAY100US:
+004C C030             21             PUSH 30H
+004E 753029           22             MOV 30H,#41
+0051                  23     NEXT:
+0051 D530FD           24             DJNZ    30H,NEXT
+0054 D030             25             POP             30H
+0056 22               26             RET
+0057                  27     TABLER:
+0057 FFFF0000         28             DB      0xFF,0XFF,0X00,0X00,0XFC,0XFC,0xFF,0XFF ;行控制形状,低电平有效
+005B FCFCFFFF                
+005F                  29     TABLEC:
+005F 01020408         30             DB 01H,02H,04H,08H,10H,20H,40H,80H                      ;列扫描，C7是高
+0063 10204080                
+                      31     END
+A51 MACRO ASSEMBLER  DIANZHEN                                                             04/17/2023 08:23:54 PAGE     2
+
+SYMBOL TABLE LISTING
+------ ----- -------
+
+
+N A M E             T Y P E  V A L U E   ATTRIBUTES
+
+DELAY100US . . . .  C ADDR   004CH   A   
+MAIN . . . . . . .  C ADDR   0034H   A   
+NEXT . . . . . . .  C ADDR   0051H   A   
+P0 . . . . . . . .  D ADDR   0080H   A   
+P3 . . . . . . . .  D ADDR   00B0H   A   
+START. . . . . . .  C ADDR   0030H   A   
+TABLEC . . . . . .  C ADDR   005FH   A   
+TABLER . . . . . .  C ADDR   0057H   A   
+
+
+REGISTER BANK(S) USED: 0 
+
+
+ASSEMBLY COMPLETE.  0 WARNING(S), 0 ERROR(S)

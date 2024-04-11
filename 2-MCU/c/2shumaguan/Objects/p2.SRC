@@ -1,0 +1,174 @@
+; .\Objects\p2.SRC generated from: p2.c
+; COMPILER INVOKED BY:
+;        D:\App\keil_v5\C51\BIN\C51.EXE p2.c OPTIMIZE(8,SPEED) BROWSE DEBUG OBJECTEXTEND PRINT(.\Listings\p2.lst) TABS(2) SRC(.\Objects\p2.SRC)
+
+$NOMOD51
+
+NAME	P2
+
+P0	DATA	080H
+?PR?_delay_10us?P2   SEGMENT CODE 
+?PR?smg?P2           SEGMENT CODE 
+?PR?main?P2          SEGMENT CODE 
+?C_INITSEG           SEGMENT CODE 
+?DT?P2               SEGMENT DATA 
+	EXTRN	CODE (?C_STARTUP)
+	PUBLIC	gsmg_code
+	PUBLIC	string
+	PUBLIC	main
+	PUBLIC	smg
+	PUBLIC	_delay_10us
+
+	RSEG  ?DT?P2
+         string:   DS   10
+      gsmg_code:   DS   17
+
+	RSEG  ?C_INITSEG
+	DB	011H
+	DB	gsmg_code
+	DB	03FH
+	DB	006H
+	DB	05BH
+	DB	04FH
+	DB	066H
+	DB	06DH
+	DB	07DH
+	DB	007H
+	DB	07FH
+	DB	06FH
+	DB	077H
+	DB	07CH
+	DB	039H
+	DB	05EH
+	DB	079H
+	DB	071H
+	DB  000H
+
+
+	DB	00AH
+	DB	string
+	DB	000H
+	DB	001H
+	DB	002H
+	DB	003H
+	DB	004H
+	DB	005H
+	DB	006H
+	DB	007H
+	DB	008H
+	DB	009H
+
+; sfr P0 = 0x80;
+; #define duanxuan	P0	//使用宏定义数码管段码口
+; 
+; typedef unsigned int u16;	//对系统默认数据类型进行重定义
+; typedef unsigned char u8;
+; 
+; 
+; //共阴极数码管显示0~F的段码数据
+; u8 gsmg_code[17]={0x3f,0x06,0x5b,0x4f,0x66,0x6d,0x7d,0x07,
+; 				0x7f,0x6f,0x77,0x7c,0x39,0x5e,0x79,0x71};
+; 
+; u8 string[10] = {0,1,2,3,4,5,6,7,8,9 };
+; 
+; void delay_10us(u16 ten_us)
+
+	RSEG  ?PR?_delay_10us?P2
+_delay_10us:
+	USING	0
+			; SOURCE LINE # 14
+;---- Variable 'ten_us?040' assigned to Register 'R6/R7' ----
+; {
+			; SOURCE LINE # 15
+?C0001:
+; 	while(ten_us--);	
+			; SOURCE LINE # 16
+	MOV  	A,R7
+	DEC  	R7
+	MOV  	R4,AR6
+	JNZ  	?C0011
+	DEC  	R6
+?C0011:
+	ORL  	A,R4
+	JNZ  	?C0001
+; }
+			; SOURCE LINE # 17
+	RET  	
+; END OF _delay_10us
+
+; 
+; void smg()
+
+	RSEG  ?PR?smg?P2
+smg:
+	USING	0
+			; SOURCE LINE # 19
+; {
+			; SOURCE LINE # 20
+;       u8 i;
+;       for(i=0;i<10;i++)
+			; SOURCE LINE # 22
+;---- Variable 'i?141' assigned to Register 'R5' ----
+	CLR  	A
+	MOV  	R5,A
+?C0004:
+	MOV  	A,R5
+	CLR  	C
+	SUBB 	A,#0AH
+	MOV  	A,#080H
+	SUBB 	A,#080H
+	JNC  	?C0007
+;       {
+			; SOURCE LINE # 23
+;         duanxuan=gsmg_code[string[i]];  //传送段选数据
+			; SOURCE LINE # 24
+	MOV  	A,#LOW (string)
+	ADD  	A,R5
+	MOV  	R0,A
+	MOV  	A,@R0
+	ADD  	A,#LOW (gsmg_code)
+	MOV  	R0,A
+	MOV  	A,@R0
+	MOV  	P0,A
+;         delay_10us(30000);  //延时一段时间，等待显示稳定
+			; SOURCE LINE # 25
+	MOV  	R7,#030H
+	MOV  	R6,#075H
+	LCALL	_delay_10us
+;         duanxuan=0x00;  //消音
+			; SOURCE LINE # 26
+	CLR  	A
+	MOV  	P0,A
+;       }
+			; SOURCE LINE # 27
+	INC  	R5
+	SJMP 	?C0004
+; }
+			; SOURCE LINE # 28
+?C0007:
+	RET  	
+; END OF smg
+
+; 
+; void main()
+
+	RSEG  ?PR?main?P2
+main:
+	USING	0
+			; SOURCE LINE # 30
+; {	 
+			; SOURCE LINE # 31
+?C0008:
+;       while(1)
+			; SOURCE LINE # 32
+;       {
+			; SOURCE LINE # 33
+;         smg();
+			; SOURCE LINE # 34
+	LCALL	smg
+;       }
+			; SOURCE LINE # 35
+	SJMP 	?C0008
+; END OF main
+
+	END

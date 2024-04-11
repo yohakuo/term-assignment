@@ -1,0 +1,82 @@
+A51 MACRO ASSEMBLER  CHUANKOU2                                                            04/17/2023 13:39:58 PAGE     1
+
+
+MACRO ASSEMBLER A51 V8.2.7.0
+OBJECT MODULE PLACED IN .\Objects\chuankou2.obj
+ASSEMBLER INVOKED BY: D:\App\keil_v5\C51\BIN\A51.EXE chuankou2.a51 SET(SMALL) DEBUG PRINT(.\Listings\chuankou2.lst) OBJE
+                      CT(.\Objects\chuankou2.obj) EP
+
+LOC  OBJ            LINE     SOURCE
+
+0000                   1             ORG 0000H
+0000 020300            2             LJMP MAIN
+0300                   3             ORG 0300H
+0300                   4     MAIN:
+0300 758160            5             MOV SP,#60H
+0303 758920            6             MOV TMOD,#20H   ;…Ë÷√T1Œ™∑Ω Ω2
+0306 759850            7             MOV SCON,#50H   ;…Ë÷√¥Æø⁄Œ™∑Ω Ω1
+0309 758700            8             MOV PCON,#00H   ;≤®Ãÿ¬ ≤ª±∂‘ˆ
+030C 758DFD            9             MOV TH1,#0FDH
+030F 758BFD           10             MOV TL1,#0FDH   ;…Ë÷√≤®Ãÿ¬ Œ™9600
+0312 D28E             11             SETB TR1                ;T1ø™ ºº∆ 
+0314 7E05             12             MOV R6,#5
+                      13     
+0316                  14     LOOP:   
+0316 3098FD           15             JNB RI,$                        ;Œ™0◊™“∆£¨µ»¥Ω” ’
+0319 C298             16             CLR RI
+031B E599             17             MOV A,SBUF                      ;Ω” ’ æ›
+031D DE02             18             DJNZ R6,K1                      ;ºƒ¥Ê∆˜ƒ⁄»›ºı1£¨∑«0◊™“∆
+031F 7E05             19             MOV R6,#5
+                      20     
+0321                  21     K1:                                     
+0321 BE0407           22             CJNE R6,#4,K2
+0324 74FE             23             MOV A,#0XFE             ;led1¡¡
+0326 F580             24             MOV P0,A
+0328 020316           25             LJMP LOOP       ;µ»¥œ¬“ª¥ŒΩ” ’ æ›
+032B                  26     K2:                                     
+032B BE0307           27             CJNE R6,#3,K3
+032E 74FD             28             MOV A,#0XFD             ;led2¡¡
+0330 F580             29             MOV P0,A
+0332 020316           30             LJMP LOOP       ;µ»¥œ¬“ª¥ŒΩ” ’ æ›
+0335                  31     K3:                                     
+0335 BE0207           32             CJNE R6,#2,K4
+0338 74F6             33             MOV A,#0XF6             ;∂º¡¡
+033A F580             34             MOV P0,A
+033C 020316           35             LJMP LOOP       ;µ»¥œ¬“ª¥ŒΩ” ’ æ›
+033F                  36     K4:
+033F BE01D4           37             CJNE R6,#1,LOOP
+0342 74FF             38             MOV A,#0XFF     ;∂º√
+0344 F580             39             MOV P0,A
+0346 020316           40             LJMP LOOP       ;µ»¥œ¬“ª¥ŒΩ” ’ æ›
+                      41     
+                      42     END
+A51 MACRO ASSEMBLER  CHUANKOU2                                                            04/17/2023 13:39:58 PAGE     2
+
+SYMBOL TABLE LISTING
+------ ----- -------
+
+
+N A M E             T Y P E  V A L U E   ATTRIBUTES
+
+K1 . . . . . . . .  C ADDR   0321H   A   
+K2 . . . . . . . .  C ADDR   032BH   A   
+K3 . . . . . . . .  C ADDR   0335H   A   
+K4 . . . . . . . .  C ADDR   033FH   A   
+LOOP . . . . . . .  C ADDR   0316H   A   
+MAIN . . . . . . .  C ADDR   0300H   A   
+P0 . . . . . . . .  D ADDR   0080H   A   
+PCON . . . . . . .  D ADDR   0087H   A   
+RI . . . . . . . .  B ADDR   0098H.0 A   
+SBUF . . . . . . .  D ADDR   0099H   A   
+SCON . . . . . . .  D ADDR   0098H   A   
+SP . . . . . . . .  D ADDR   0081H   A   
+TH1. . . . . . . .  D ADDR   008DH   A   
+TL1. . . . . . . .  D ADDR   008BH   A   
+TMOD . . . . . . .  D ADDR   0089H   A   
+TR1. . . . . . . .  B ADDR   0088H.6 A   
+
+
+REGISTER BANK(S) USED: 0 
+
+
+ASSEMBLY COMPLETE.  0 WARNING(S), 0 ERROR(S)

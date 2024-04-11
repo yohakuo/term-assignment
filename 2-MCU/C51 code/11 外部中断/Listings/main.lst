@@ -1,0 +1,63 @@
+C51 COMPILER V9.59.0.0   MAIN                                                              01/19/2023 18:41:58 PAGE 1   
+
+
+C51 COMPILER V9.59.0.0, COMPILATION OF MODULE MAIN
+OBJECT MODULE PLACED IN .\Objects\main.obj
+COMPILER INVOKED BY: D:\App\keil_v5\C51\BIN\C51.EXE main.c OPTIMIZE(8,SPEED) BROWSE DEBUG OBJECTEXTEND PRINT(.\Listings\
+                    -main.lst) TABS(2) OBJECT(.\Objects\main.obj)
+
+line level    source
+
+   1          #include <reg51.h>
+   2          sbit K3=P3^2;
+   3          sbit K4=P3^3;
+   4          typedef unsigned int u8;
+   5          
+   6          u8 Code[10]={0x3f,0x06,0x5b,0x4f,0x66,0x6d,0x7d,0x07,0x7f,0x6f};
+   7          u8 num;
+   8          
+   9          void interrupt_init(void)
+  10          {
+  11   1        num=1;  //初始值
+  12   1        IT0=1;  //跳变沿触发方式
+  13   1        EX0=1;  //打开INT0 的中断允许
+  14   1        IT1=1;
+  15   1        EX1=1;
+  16   1        EA=1;    //打开总中断
+  17   1      }
+  18          void main()
+  19          {
+  20   1        interrupt_init();
+  21   1        P0=Code[num];
+  22   1        while(1);
+  23   1      }
+  24          void TestFunction0() interrupt 0
+  25          {
+  26   1        if(num==0)
+  27   1          num=9;
+  28   1        else
+  29   1          num--;
+  30   1        P0=Code[num];
+  31   1      }
+  32          void TestFunction1() interrupt 2
+  33          {
+  34   1        if(num==9)
+  35   1          num=0;
+  36   1        else
+  37   1          num++;
+  38   1        P0=Code[num];
+  39   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    130    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =     22    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

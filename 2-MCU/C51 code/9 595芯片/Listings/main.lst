@@ -1,0 +1,79 @@
+C51 COMPILER V9.59.0.0   MAIN                                                              01/05/2023 22:07:22 PAGE 1   
+
+
+C51 COMPILER V9.59.0.0, COMPILATION OF MODULE MAIN
+OBJECT MODULE PLACED IN .\Objects\main.obj
+COMPILER INVOKED BY: D:\App\keil_v5\C51\BIN\C51.EXE main.c OPTIMIZE(8,SPEED) BROWSE DEBUG OBJECTEXTEND PRINT(.\Listings\
+                    -main.lst) TABS(2) OBJECT(.\Objects\main.obj)
+
+line level    source
+
+   1          #include "reg52.h"
+   2          #define LEDDZ_COL_PORT P0             //点阵列控制端口
+   3          //对系统默认数据类型进行重定义
+   4            typedef unsigned int u16; 
+   5            typedef unsigned char u8;
+   6          //定义74HC595 控制管脚
+   7            sbit shift_reg=P3^6;        //数据输入时钟线
+   8            sbit storage_reg=P3^5;      //输出存储器锁存时钟线
+   9            sbit serial_dat=P3^4;       //串行数据输入
+  10          
+  11            u8 Ghc595_buf[5]={0xFF,0xF0,0xCC,0xAA,0x00};
+  12            
+  13            void delay_10us(u16 ten_us)
+  14            {
+  15   1          while(ten_us--);
+  16   1        }
+  17            void delay_ms(u16 ms)
+  18            {
+  19   1          u16 i,j;
+  20   1          for(i=ms;i>0;i--)
+  21   1            for(j=110;j>0;j--);
+  22   1        }
+  23            void Send_595(u8 dat)
+  24            {
+  25   1          u8 i=0;
+  26   1          for(i=0;i<8;i++)         //循环8次即可将一个字节写入寄存器中
+  27   1          {
+  28   2            serial_dat=dat>>7;     //优先传输一个字节中的高位
+  29   2            dat<<=1;               //将低位移动到高位
+  30   2            shift_reg=0;
+  31   2      //      delay_10us(1);
+  32   2            shift_reg=1;           // 0-->1表示上升沿
+  33   2      //      delay_10us(1);        
+  34   2          }
+  35   1          storage_reg=0;
+  36   1      //    delay_10us(1);
+  37   1          storage_reg=1;           //将前面写入到寄存器的数据输出
+  38   1        }
+  39            
+  40            void main()
+  41            {
+  42   1          u8 i=0;
+  43   1          LEDDZ_COL_PORT=0x00;        //将LED 点阵列全部设置为0，即LED阴极为低电平
+  44   1          while(1)
+  45   1          { 
+  46   2            for(i=0;i<5;i++)
+  47   2            {
+  48   3              Send_595(0x00);            //消除前面寄存器缓存数据
+  49   3              Send_595(Ghc595_buf[i]);   //写入新的数据
+  50   3              delay_ms(500);             //延时500ms
+  51   3            }
+  52   2          }   
+  53   1        }
+
+C51 COMPILER V9.59.0.0   MAIN                                                              01/05/2023 22:07:22 PAGE 2   
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    119    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =      5    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

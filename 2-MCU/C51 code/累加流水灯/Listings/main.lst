@@ -1,0 +1,112 @@
+C51 COMPILER V9.59.0.0   MAIN                                                              12/29/2022 10:15:26 PAGE 1   
+
+
+C51 COMPILER V9.59.0.0, COMPILATION OF MODULE MAIN
+OBJECT MODULE PLACED IN .\Objects\main.obj
+COMPILER INVOKED BY: D:\App\keil_v5\C51\BIN\C51.EXE main.c OPTIMIZE(8,SPEED) BROWSE DEBUG OBJECTEXTEND PRINT(.\Listings\
+                    -main.lst) TABS(2) OBJECT(.\Objects\main.obj)
+
+line level    source
+
+   1          #include "reg52.h"
+   2          typedef unsigned int u16; //对系统默认数据类型进行重定义
+   3          typedef unsigned char u8;
+   4          
+   5          sbit LED0=P2^0; 
+   6          sbit LED1=P2^1;
+   7          sbit LED2=P2^2; 
+   8          sbit LED3=P2^3; 
+   9          sbit LED4=P2^4;
+  10          sbit LED5=P2^5;
+  11          sbit LED6=P2^6;
+  12          sbit LED7=P2^7;
+  13          void Delay1000ms()    //@12.000MHz
+  14          {
+  15   1        unsigned char i, j, k;
+  16   1        i = 8;
+  17   1        j = 154;
+  18   1        k = 122;
+  19   1        do
+  20   1        {
+  21   2          do
+  22   2          {
+  23   3            while (--k);
+  24   3          } while (--j);
+  25   2        } while (--i);
+  26   1      }
+  27          
+  28          
+  29          
+  30          void main()
+  31          {
+  32   1        //初始值
+  33   1        P2=0xFD;
+  34   1        while(1)
+  35   1        {
+  36   2          if(LED0==0)
+  37   2          {
+  38   3            LED0=~LED0;
+  39   3              if(LED1==0)
+  40   3              {
+  41   4                LED1=~LED1;
+  42   4                  if(LED2==0)
+  43   4                  {
+  44   5                    LED2=~LED2;
+  45   5                      if(LED3==0)
+  46   5                      {
+  47   6                        LED3=~LED3;
+  48   6                        if(LED4==0)
+  49   6                        {
+  50   7                          LED4=~LED4;
+  51   7                          if(LED5==0)
+  52   7                          {
+  53   8                            LED5=~LED5;
+  54   8                            if(LED6==0)
+C51 COMPILER V9.59.0.0   MAIN                                                              12/29/2022 10:15:26 PAGE 2   
+
+  55   8                            {
+  56   9                              LED6=~LED6;
+  57   9                              if(LED7==0)
+  58   9                              {
+  59  10                                LED7=~LED7;
+  60  10                              }
+  61   9                              else
+  62   9                                LED7=0;
+  63   9                            }
+  64   8                            else
+  65   8                              LED6=0;
+  66   8                          }
+  67   7                          else
+  68   7                            LED5=0;
+  69   7                        }
+  70   6                        else
+  71   6                          LED4=0;
+  72   6                      }
+  73   5                      else
+  74   5                        LED3=0;
+  75   5                  }
+  76   4                   else
+  77   4                     LED2=0;
+  78   4               }
+  79   3              else
+  80   3                LED1=0;
+  81   3            }
+  82   2          else
+  83   2            LED0=0;
+  84   2          Delay1000ms();
+  85   2        }   
+  86   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =     93    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

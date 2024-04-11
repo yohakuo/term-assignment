@@ -1,0 +1,51 @@
+A51 MACRO ASSEMBLER  DINGSHIQI                                                            04/11/2023 17:29:01 PAGE     1
+
+
+MACRO ASSEMBLER A51 V8.2.7.0
+OBJECT MODULE PLACED IN .\Objects\dingshiqi.obj
+ASSEMBLER INVOKED BY: D:\App\keil_v5\C51\BIN\A51.EXE dingshiqi.a51 SET(SMALL) DEBUG PRINT(.\Listings\dingshiqi.lst) OBJE
+                      CT(.\Objects\dingshiqi.obj) EP
+
+LOC  OBJ            LINE     SOURCE
+
+0000                   1     ORG 0000h
+0000 010D              2     AJMP START
+000B                   3     ORG 000BH       ;定时器TO入口
+000B 011E              4     AJMP TIME0
+                       5     
+000D                   6     START:
+000D 758901            7             MOV TMOD,#0x01
+0010 758C3C            8             MOV TH0,#0x3c
+0013 758AB0            9             MOV TL0,#0xb0   ;初值为15536计时50ms
+0016 D2A9             10             SETB ET0
+0018 D28C             11             SETB TR0
+001A D2AF             12             SETB EA                 ;开中断
+001C 80FE             13             SJMP $
+                      14     
+001E                  15     TIME0:
+001E B280             16             CPL P0.0
+0020 32               17             RETI
+                      18             END
+A51 MACRO ASSEMBLER  DINGSHIQI                                                            04/11/2023 17:29:01 PAGE     2
+
+SYMBOL TABLE LISTING
+------ ----- -------
+
+
+N A M E             T Y P E  V A L U E   ATTRIBUTES
+
+EA . . . . . . . .  B ADDR   00A8H.7 A   
+ET0. . . . . . . .  B ADDR   00A8H.1 A   
+P0 . . . . . . . .  D ADDR   0080H   A   
+START. . . . . . .  C ADDR   000DH   A   
+TH0. . . . . . . .  D ADDR   008CH   A   
+TIME0. . . . . . .  C ADDR   001EH   A   
+TL0. . . . . . . .  D ADDR   008AH   A   
+TMOD . . . . . . .  D ADDR   0089H   A   
+TR0. . . . . . . .  B ADDR   0088H.4 A   
+
+
+REGISTER BANK(S) USED: 0 
+
+
+ASSEMBLY COMPLETE.  0 WARNING(S), 0 ERROR(S)

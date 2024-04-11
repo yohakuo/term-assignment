@@ -1,0 +1,49 @@
+A51 MACRO ASSEMBLER  ZHONGDAUN                                                            04/11/2023 16:41:14 PAGE     1
+
+
+MACRO ASSEMBLER A51 V8.2.7.0
+OBJECT MODULE PLACED IN .\Objects\zhongdaun.obj
+ASSEMBLER INVOKED BY: D:\App\keil_v5\C51\BIN\A51.EXE zhongdaun.a51 SET(SMALL) DEBUG PRINT(.\Listings\zhongdaun.lst) OBJE
+                      CT(.\Objects\zhongdaun.obj) EP
+
+LOC  OBJ            LINE     SOURCE
+
+0000                   1     ORG 0000H ;
+0000 2150              2     AJMP MAIN ;ÀûÓÃÌø×ªÖ¸ÁîÌø×ªµ½Ö÷º¯ÊMAIN
+0003                   3     ORG 0003H ;Íâ²¿ÖÐ¶ÏOµÄÈë¿ÚÎªÄÚ²¿ROMµÄ8003Hµ¥Ôª
+0003 6100              4     AJMP I0   ;ÀûÓÃÌø×ªÖ¸ÁîÌø×ªµ½µ½ÖÐ¶Ïº¯ÊÖÐ
+0150                   5     ORG 0150H
+0150                   6     MAIN:
+                       7     
+0150 D2AF              8             SETB EA         ;¿ªÆô×ÜÖÐ¶Ï(ÖÃ1)
+0152 D2A8              9             SETB EX0        ;¿ªÆôÍâ²¿ÖÐ¶Ï0
+0154 D288             10             SETB IT0        ;ÉèÖÃÍâ²¿ÖÐ¶ÏÔ´´¥·¢·½Ê½ÎªÏÂ½µÑØ´¥·¢
+0156 D280             11             SETB P0.0       ;³õÊ¼»¯LEDÎªÃð
+0158 80FE             12             SJMP $          ;Ìø×ªµ½×ÔÉí
+                      13     
+0300                  14     ORG 0300H               ;ÖÐ¶Ï³ÌÐò´ÓÄÚ²¿ROMµÄ030OHµ¥Ôª¿ªÊ¼±£´æ
+0300                  15     I0:
+0300 B280             16             CPL P0^0        ;¶ÔP0.È¡·´£¬¸Ä±äLED×´Ì¬
+0302 32               17             RETI            ;·µ»ØÖ÷³ÌÐò
+                      18             END
+                             
+A51 MACRO ASSEMBLER  ZHONGDAUN                                                            04/11/2023 16:41:14 PAGE     2
+
+SYMBOL TABLE LISTING
+------ ----- -------
+
+
+N A M E             T Y P E  V A L U E   ATTRIBUTES
+
+EA . . . . . . . .  B ADDR   00A8H.7 A   
+EX0. . . . . . . .  B ADDR   00A8H.0 A   
+I0 . . . . . . . .  C ADDR   0300H   A   
+IT0. . . . . . . .  B ADDR   0088H.0 A   
+MAIN . . . . . . .  C ADDR   0150H   A   
+P0 . . . . . . . .  D ADDR   0080H   A   
+
+
+REGISTER BANK(S) USED: 0 
+
+
+ASSEMBLY COMPLETE.  0 WARNING(S), 0 ERROR(S)

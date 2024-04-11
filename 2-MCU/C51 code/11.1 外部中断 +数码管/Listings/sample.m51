@@ -1,0 +1,137 @@
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                    01/19/2023  19:16:01  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22.2.0, INVOKED BY:
+D:\APP\KEIL_V5\C51\BIN\BL51.EXE .\Objects\main.obj TO .\Objects\sample PRINT (.\Listings\sample.m51) RAMSIZE (256)
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  .\Objects\main.obj (MAIN)
+  D:\APP\KEIL_V5\C51\LIB\C51S.LIB (?C_STARTUP)
+  D:\APP\KEIL_V5\C51\LIB\C51S.LIB (?C_INIT)
+
+
+LINK MAP OF MODULE:  .\Objects\sample (MAIN)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            DATA    0008H     0019H     UNIT         ?DT?MAIN
+            IDATA   0021H     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+            CODE    0003H     0003H     ABSOLUTE     
+            CODE    0006H     008CH     UNIT         ?C_C51STARTUP
+            CODE    0092H     003BH     UNIT         ?PR?SMG?MAIN
+            CODE    00CDH     001EH     UNIT         ?C_INITSEG
+            CODE    00EBH     000BH     UNIT         ?PR?_DELAY_10US?MAIN
+            CODE    00F6H     0008H     UNIT         ?PR?MAIN?MAIN
+            CODE    00FEH     0007H     UNIT         ?PR?INTERRUPT_INIT?MAIN
+            CODE    0105H     0004H     UNIT         ?PR?TESTFUNCTION0?MAIN
+
+
+
+OVERLAY MAP OF MODULE:   .\Objects\sample (MAIN)
+
+
+SEGMENT
+  +--> CALLED SEGMENT
+---------------------
+?C_C51STARTUP
+  +--> ?PR?MAIN?MAIN
+  +--> ?C_INITSEG
+
+?PR?MAIN?MAIN
+  +--> ?PR?INTERRUPT_INIT?MAIN
+  +--> ?PR?SMG?MAIN
+
+?PR?SMG?MAIN
+  +--> ?PR?_DELAY_10US?MAIN
+
+
+
+SYMBOL TABLE OF MODULE:  .\Objects\sample (MAIN)
+
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  01/19/2023  19:16:01  PAGE 2
+
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        MAIN
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:0080H         PUBLIC        P0
+  D:00A0H         PUBLIC        P2
+  B:00A8H.7       PUBLIC        EA
+  C:00FEH         PUBLIC        interrupt_init
+  D:0008H         PUBLIC        string
+  C:0105H         PUBLIC        TestFunction0
+  C:00F6H         PUBLIC        main
+  D:0010H         PUBLIC        gsmg_code
+  C:00EBH         PUBLIC        _delay_10us
+  C:0092H         PUBLIC        smg
+  B:00A8H.0       PUBLIC        EX0
+  B:0088H.0       PUBLIC        IT0
+  B:00A0H.2       PUBLIC        LSA
+  B:00A0H.3       PUBLIC        LSB
+  B:00A0H.4       PUBLIC        LSC
+  -------         PROC          _DELAY_10US
+  D:0006H         SYMBOL        ten_us
+  C:00EBH         LINE#         14
+  C:00EBH         LINE#         15
+  C:00EBH         LINE#         16
+  C:00F5H         LINE#         17
+  -------         ENDPROC       _DELAY_10US
+  -------         PROC          SMG
+  -------         DO            
+  D:0003H         SYMBOL        LSX
+  D:0005H         SYMBOL        i
+  -------         ENDDO         
+  C:0092H         LINE#         19
+  C:0092H         LINE#         20
+  C:0092H         LINE#         22
+  C:009EH         LINE#         23
+  C:009EH         LINE#         24
+  C:00A3H         LINE#         25
+  C:00B4H         LINE#         26
+  C:00BFH         LINE#         27
+  C:00C6H         LINE#         28
+  C:00C9H         LINE#         29
+  C:00CCH         LINE#         30
+  -------         ENDPROC       SMG
+  -------         PROC          INTERRUPT_INIT
+  C:00FEH         LINE#         33
+  C:00FEH         LINE#         34
+  C:00FEH         LINE#         35
+  C:0100H         LINE#         36
+  C:0102H         LINE#         37
+  C:0104H         LINE#         38
+  -------         ENDPROC       INTERRUPT_INIT
+  -------         PROC          MAIN
+  C:00F6H         LINE#         42
+  C:00F6H         LINE#         43
+  C:00F6H         LINE#         44
+  C:00F9H         LINE#         45
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  01/19/2023  19:16:01  PAGE 3
+
+
+  C:00F9H         LINE#         46
+  C:00F9H         LINE#         47
+  C:00FCH         LINE#         48
+  -------         ENDPROC       MAIN
+  -------         PROC          TESTFUNCTION0
+  C:0105H         LINE#         52
+  C:0105H         LINE#         54
+  C:0108H         LINE#         55
+  -------         ENDPROC       TESTFUNCTION0
+  -------         ENDMOD        MAIN
+
+Program Size: data=34.0 xdata=0 code=265
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)

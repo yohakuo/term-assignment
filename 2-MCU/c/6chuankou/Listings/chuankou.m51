@@ -1,0 +1,110 @@
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                    04/12/2023  21:46:35  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22.2.0, INVOKED BY:
+D:\APP\KEIL_V5\C51\BIN\BL51.EXE .\Objects\chuankou2.obj TO .\Objects\chuankou PRINT (.\Listings\chuankou.m51)
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  .\Objects\chuankou2.obj (CHUANKOU2)
+  D:\APP\KEIL_V5\C51\LIB\C51S.LIB (?C_STARTUP)
+
+
+LINK MAP OF MODULE:  .\Objects\chuankou (CHUANKOU2)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            IDATA   0008H     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+            CODE    0003H     0042H     UNIT         ?PR?MAIN?CHUANKOU2
+            CODE    0045H     000FH     UNIT         ?PR?DELAY10MS?CHUANKOU2
+            CODE    0054H     000CH     UNIT         ?C_C51STARTUP
+
+
+
+OVERLAY MAP OF MODULE:   .\Objects\chuankou (CHUANKOU2)
+
+
+SEGMENT
+  +--> CALLED SEGMENT
+---------------------
+?C_C51STARTUP
+  +--> ?PR?MAIN?CHUANKOU2
+
+
+
+SYMBOL TABLE OF MODULE:  .\Objects\chuankou (CHUANKOU2)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        CHUANKOU2
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:0080H         PUBLIC        P0
+  B:00A8H.7       PUBLIC        EA
+  B:00A8H.4       PUBLIC        ES
+  B:0098H.0       PUBLIC        RI
+  C:0003H         PUBLIC        main
+  D:0099H         PUBLIC        SBUF
+  D:0087H         PUBLIC        PCON
+  D:0098H         PUBLIC        SCON
+  C:0045H         PUBLIC        Delay10ms
+  D:0089H         PUBLIC        TMOD
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  04/12/2023  21:46:35  PAGE 2
+
+
+  D:008DH         PUBLIC        TH1
+  D:008BH         PUBLIC        TL1
+  B:0088H.6       PUBLIC        TR1
+  B:0080H.0       PUBLIC        led1
+  B:0080H.3       PUBLIC        led2
+  -------         PROC          DELAY10MS
+  -------         DO            
+  D:0006H         SYMBOL        i
+  -------         ENDDO         
+  C:0045H         LINE#         8
+  C:0045H         LINE#         9
+  C:0045H         LINE#         11
+  C:0049H         LINE#         12
+  C:0053H         LINE#         13
+  -------         ENDPROC       DELAY10MS
+  -------         PROC          MAIN
+  C:0003H         LINE#         15
+  C:0003H         LINE#         16
+  C:0003H         LINE#         17
+  C:0006H         LINE#         18
+  C:0006H         LINE#         19
+  C:0009H         LINE#         20
+  C:000CH         LINE#         21
+  C:000FH         LINE#         22
+  C:0011H         LINE#         23
+  C:0013H         LINE#         24
+  C:0015H         LINE#         25
+  C:0017H         LINE#         27
+  C:0017H         LINE#         28
+  C:0017H         LINE#         29
+  C:001AH         LINE#         30
+  C:001AH         LINE#         31
+  C:001CH         LINE#         32
+  C:002DH         LINE#         33
+  C:002DH         LINE#         34
+  C:0033H         LINE#         35
+  C:0039H         LINE#         36
+  C:003FH         LINE#         37
+  -------         ENDPROC       MAIN
+  -------         ENDMOD        CHUANKOU2
+
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?DELAY10MS?CHUANKOU2
+
+Program Size: data=9.0 xdata=0 code=96
+LINK/LOCATE RUN COMPLETE.  1 WARNING(S),  0 ERROR(S)

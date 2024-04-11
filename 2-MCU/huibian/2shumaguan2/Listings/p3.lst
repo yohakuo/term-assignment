@@ -1,0 +1,75 @@
+A51 MACRO ASSEMBLER  P3                                                                   04/04/2023 17:02:58 PAGE     1
+
+
+MACRO ASSEMBLER A51 V8.2.7.0
+OBJECT MODULE PLACED IN .\Objects\p3.obj
+ASSEMBLER INVOKED BY: D:\App\keil_v5\C51\BIN\A51.EXE p3.a51 SET(SMALL) DEBUG PRINT(.\Listings\p3.lst) OBJECT(.\Objects\p
+                      3.obj) EP
+
+LOC  OBJ            LINE     SOURCE
+
+0000                   1     ORG             0000H
+0000 021000            2     LJMP    START
+1000                   3     ORG             1000H
+1000                   4     START:
+1000 7901              5     MOV             R1,#1
+1002                   6     LOOP:
+1002 7800              7     MOV             R0,#0
+1004 7A01              8     MOV             R2,#0X01
+1006                   9     LOOP1:
+1006 EA               10     MOV             A,R2
+1007 F5A0             11     MOV             P2,A
+1009 E8               12     MOV             A,R0
+100A 90103C           13     MOV             DPTR,#TABLE
+100D 93               14     MOVC    A,@A+DPTR
+100E F580             15     MOV             P0,A
+1010 121032           16     LCALL   DELAY
+1013 121032           17     LCALL   DELAY
+1016 121032           18     LCALL   DELAY
+1019 121032           19     LCALL   DELAY
+101C 121032           20     LCALL   DELAY
+101F 121032           21     LCALL   DELAY
+1022 74FF             22     MOV             A,#0XFF
+1024 F580             23     MOV             P0,A
+1026 08               24     INC             R0
+1027 EA               25     MOV             A,R2
+1028 23               26     RL              A
+1029 FA               27     MOV             R2,A
+102A F5A0             28     MOV             P2,A
+102C B808D7           29     CJNE    R0,#8,LOOP1
+102F B900D0           30     CJNE    R1,#0,LOOP
+1032                  31     DELAY:
+1032 7FC8             32     MOV             R7,#200
+1034                  33     DLY1:
+1034 7EC8             34     MOV             R6,#200
+1036                  35     DLY2:
+1036 DEFE             36     DJNZ    R6,DLY2
+1038 00               37     NOP
+1039 DFF9             38     DJNZ    R7,DLY1
+103B 22               39     RET
+103C C0F9A4B0         40     TABLE:  DB 0XC0,0XF9,0XA4,0XB0,0X99,0X92,0X82,0XF8
+1040 999282F8                
+                      41     END
+A51 MACRO ASSEMBLER  P3                                                                   04/04/2023 17:02:58 PAGE     2
+
+SYMBOL TABLE LISTING
+------ ----- -------
+
+
+N A M E             T Y P E  V A L U E   ATTRIBUTES
+
+DELAY. . . . . . .  C ADDR   1032H   A   
+DLY1 . . . . . . .  C ADDR   1034H   A   
+DLY2 . . . . . . .  C ADDR   1036H   A   
+LOOP . . . . . . .  C ADDR   1002H   A   
+LOOP1. . . . . . .  C ADDR   1006H   A   
+P0 . . . . . . . .  D ADDR   0080H   A   
+P2 . . . . . . . .  D ADDR   00A0H   A   
+START. . . . . . .  C ADDR   1000H   A   
+TABLE. . . . . . .  C ADDR   103CH   A   
+
+
+REGISTER BANK(S) USED: 0 
+
+
+ASSEMBLY COMPLETE.  0 WARNING(S), 0 ERROR(S)

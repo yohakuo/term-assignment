@@ -1,0 +1,102 @@
+A51 MACRO ASSEMBLER  P4                                                                   04/10/2023 08:55:13 PAGE     1
+
+
+MACRO ASSEMBLER A51 V8.2.7.0
+OBJECT MODULE PLACED IN .\Objects\p4.obj
+ASSEMBLER INVOKED BY: D:\App\keil_v5\C51\BIN\A51.EXE p4.a51 SET(SMALL) DEBUG PRINT(.\Listings\p4.lst) OBJECT(.\Objects\p
+                      4.obj) EP
+
+LOC  OBJ            LINE     SOURCE
+
+0000                   1             ORG             0000H
+0000 020100            2             LJMP    START
+0100                   3             ORG             0100H
+0100                   4     START:
+0100 78FE              5             MOV             R0,#0XFE        ;初始化P0和P2 1111 1110
+0102 79FE              6             MOV             R1,#0XFE        ;低位亮
+0104 E8                7             MOV             A,R0
+0105 F580              8             MOV             P0,A
+0107 E9                9             MOV             A,R1
+0108 F5A0             10             MOV             P2,A
+010A                  11     KEYDOWN:
+010A E590             12             MOV             A,P1                    ;按键按下有低电平
+010C B4FF03           13             CJNE    A,#0XFF,CHECK   ;确认不都是高电平，不等转移
+010F 02010A           14             LJMP    KEYDOWN
+0112                  15     CHECK:
+0112 120158           16             LCALL   DELAY
+0115 120158           17             LCALL   DELAY
+0118 120158           18             LCALL   DELAY   ;消抖
+011B E590             19             MOV             A,P1
+011D B4FF03           20             CJNE    A,#0XFF,COL1   
+0120 02010A           21             LJMP    KEYDOWN
+0123                  22     COL1:
+0123 B4EF0B           23             CJNE    A,#0XEF,COL2    ;不为1110 1111，跳到按键二
+0126 E8               24             MOV             A,R0
+0127 03               25             RR              A                               ;循环左移
+0128 F8               26             MOV             R0,A                    ;记录当前位置
+0129 F580             27             MOV             P0,A                    
+                      28             
+012B 3094FD           29             JNB             P1^4,$                  ;判断为0则一直停在此处
+012E 02010A           30             LJMP    KEYDOWN
+0131                  31     COL2:
+0131 B4DF0B           32             CJNE    A,#0XDF,COL3    ;1101 1111
+0134 E8               33             MOV             A,R0
+0135 23               34             RL              A                               
+0136 F8               35             MOV             R0,A
+0137 F580             36             MOV             P0,A
+0139 3095FD           37             JNB             P1^5,$
+013C 02010A           38             LJMP    KEYDOWN
+013F                  39     COL3:
+013F B4BF0B           40             CJNE    A,#0XBF,COL4    ;1011 1111
+0142 E9               41             MOV             A,R1
+0143 03               42             RR              A                               ;上移向右
+0144 F9               43             MOV             R1,A
+0145 F5A0             44             MOV             P2,A
+0147 3096FD           45             JNB             P1^6,$
+014A 02010A           46             LJMP    KEYDOWN
+014D                  47     COL4:
+014D E9               48             MOV             A,R1
+014E 23               49             RL              A                               
+014F F9               50             MOV             R1,A
+0150 F5A0             51             MOV             P2,A
+0152 3097FD           52             JNB             P1^7,$
+0155 02010A           53             LJMP    KEYDOWN
+0158                  54     DELAY:
+0158 7FC8             55             MOV             R7,#200
+015A                  56     DLY1:
+015A 7E7B             57             MOV             R6,#123
+A51 MACRO ASSEMBLER  P4                                                                   04/10/2023 08:55:13 PAGE     2
+
+015C                  58     DLY2:
+015C DEFE             59             DJNZ    R6,DLY2
+015E 00               60             NOP
+015F DFF9             61             DJNZ    R7,DLY1
+0161 22               62             RET
+                      63             END
+A51 MACRO ASSEMBLER  P4                                                                   04/10/2023 08:55:13 PAGE     3
+
+SYMBOL TABLE LISTING
+------ ----- -------
+
+
+N A M E             T Y P E  V A L U E   ATTRIBUTES
+
+CHECK. . . . . . .  C ADDR   0112H   A   
+COL1 . . . . . . .  C ADDR   0123H   A   
+COL2 . . . . . . .  C ADDR   0131H   A   
+COL3 . . . . . . .  C ADDR   013FH   A   
+COL4 . . . . . . .  C ADDR   014DH   A   
+DELAY. . . . . . .  C ADDR   0158H   A   
+DLY1 . . . . . . .  C ADDR   015AH   A   
+DLY2 . . . . . . .  C ADDR   015CH   A   
+KEYDOWN. . . . . .  C ADDR   010AH   A   
+P0 . . . . . . . .  D ADDR   0080H   A   
+P1 . . . . . . . .  D ADDR   0090H   A   
+P2 . . . . . . . .  D ADDR   00A0H   A   
+START. . . . . . .  C ADDR   0100H   A   
+
+
+REGISTER BANK(S) USED: 0 
+
+
+ASSEMBLY COMPLETE.  0 WARNING(S), 0 ERROR(S)
